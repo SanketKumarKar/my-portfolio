@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Floating Gradient Blobs -->
+    <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob" style="animation-delay: -10s;"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -67,14 +73,14 @@
             <h2>Projects</h2>
             <div class="project-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card gradient-border">
                     <img src="project1.jpg" alt="Project 1">
                     <h3>AI-Powered Analytics Platform</h3>
                     <p>Machine learning-driven data visualization tool with real-time insights</p>
                     <button class="btn view-details" data-modal="modal1">View Details</button>
                 </div>
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card gradient-border">
                     <img src="project2.jpg" alt="Project 2">
                     <h3>E-commerce Automation System</h3>
                     <p>Full-stack solution integrating inventory management and AI recommendations</p>
@@ -83,22 +89,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Project Modals -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>AI-Powered Analytics Platform</h3>
-            <p>Detailed description of the project, technologies used, challenges faced, and outcomes achieved.</p>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>E-commerce Automation System</h3>
-            <p>Detailed description of the project, technologies used, challenges faced, and outcomes achieved.</p>
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -123,6 +113,10 @@
     <footer>
         <p>&copy; 2024 Sanket Kumar Kar. All rights reserved.</p>
     </footer>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
     <script src="script.js"></script>
 </body>
