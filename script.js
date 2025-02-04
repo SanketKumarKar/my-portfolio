@@ -8,13 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Dark/Light Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-});
-
 // Animated Skill Bars
 document.querySelectorAll('.skill-bar').forEach(bar => {
     const progress = bar.querySelector('.progress');
