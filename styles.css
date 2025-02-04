@@ -1,9 +1,11 @@
 /* Base Styles */
 :root {
-    --primary: #1a1a1a;
-    --secondary: #ffffff;
-    --accent: #ff6b6b;
-    --background: #f4f4f4;
+    --primary: #ffffff; /* White text */
+    --secondary: #121212; /* Dark background */
+    --accent: #ff6b6b; /* Neon pink */
+    --neon-blue: #45B7D1; /* Neon blue */
+    --neon-green: #4ECDC4; /* Neon green */
+    --background: #1a1a1a; /* Slightly lighter dark background */
 }
 
 * {
@@ -14,7 +16,7 @@
 }
 
 body {
-    background: var(--background);
+    background: var(--secondary);
     color: var(--primary);
     line-height: 1.6;
 }
@@ -37,7 +39,7 @@ body {
 
 .blob {
     position: absolute;
-    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+    background: linear-gradient(45deg, var(--accent), var(--neon-green), var(--neon-blue));
     width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -53,9 +55,9 @@ body {
 
 /* Navigation */
 nav {
-    background: var(--secondary);
+    background: var(--background);
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -112,7 +114,7 @@ nav .container {
 
 .subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #b0b0b0;
     margin-bottom: 2rem;
 }
 
@@ -132,11 +134,12 @@ nav .container {
 
 .resume-btn {
     margin-left: 1rem;
-    background: var(--primary);
+    background: var(--neon-blue);
+    color: var(--secondary);
 }
 
 .resume-btn:hover {
-    background: #333;
+    background: #3ec7be;
 }
 
 /* About Section */
@@ -170,7 +173,7 @@ nav .container {
 }
 
 .bar {
-    background: var(--secondary);
+    background: #333;
     height: 10px;
     border-radius: 5px;
     overflow: hidden;
@@ -226,7 +229,7 @@ nav .container {
 
 .project-card p {
     font-size: 0.9rem;
-    color: #666;
+    color: #cccccc;
     margin: 0 1rem 1rem;
 }
 
@@ -247,7 +250,7 @@ nav .container {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    background: linear-gradient(45deg, var(--accent), var(--neon-green));
     border-radius: 12px;
     z-index: -1;
     opacity: 0;
@@ -272,75 +275,21 @@ nav .container {
     margin-top: 2rem;
 }
 
+.contact-links .btn {
+    background: var(--neon-blue);
+    color: var(--secondary);
+}
+
+.contact-links .btn:hover {
+    background: #3ec7be;
+}
+
 /* Footer */
 footer {
-    background: var(--secondary);
+    background: var(--background);
     padding: 1rem 0;
     text-align: center;
     color: var(--primary);
     font-size: 0.9rem;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background: #121212;
-    color: #e0e0e0; /* Changed from white for better readability */
-}
-
-body.dark-mode nav {
-    background: #1a1a1a;
-    border-bottom: 1px solid #333;
-}
-
-/* Fix for headings */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode .highlight {
-    color: #ffffff !important;
-}
-
-body.dark-mode .subtitle {
-    color: #b0b0b0 !important;
-}
-
-body.dark-mode .project-card {
-    background: #2d2d2d;
-    border: 1px solid #3d3d3d;
-}
-
-body.dark-mode .project-card p {
-    color: #cccccc !important;
-}
-
-body.dark-mode .skill-bar span {
-    color: #fff;
-}
-
-body.dark-mode .bar {
-    background: #333;
-}
-
-body.dark-mode .btn {
-    background: #ff6b6b;
-    color: white;
-}
-
-body.dark-mode .resume-btn {
-    background: #3d3d3d;
-    color: white;
-}
-
-body.dark-mode .gradient-border::before {
-    background: linear-gradient(45deg, #ff4d4d, #3ec7be);
-}
-
-body.dark-mode .contact-links .btn {
-    background: #333;
-    border: 1px solid #444;
-    color: white;
-}
-
-body.dark-mode .contact-links .btn:hover {
-    background: #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
