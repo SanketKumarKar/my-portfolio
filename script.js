@@ -8,15 +8,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add Animation on Scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
+
+// Project Modals
+const modals = document.querySelectorAll('.modal');
+const modalButtons = document.querySelectorAll('.view-details');
+const closeButtons = document.querySelectorAll('.close');
+
+modalButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        modals[index].style.display = 'flex';
     });
 });
 
-document.querySelectorAll('.project-card, .skill-tags span').forEach((el) => {
-    observer.observe(el);
+closeButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        modals[index].style.display = 'none';
+    });
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+    }
 });
