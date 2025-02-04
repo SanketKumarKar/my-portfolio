@@ -281,46 +281,49 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Custom Cursor */
-.cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #FF6B6B;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transition: transform 0.3s;
-    z-index: 9999;
-}
-
-.cursor-follower {
-    width: 8px;
-    height: 8px;
-    background: #FF6B6B;
-    transition: all 0.1s;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-}
-
 /* Dark Mode */
 body.dark-mode {
-    background: #1a1a1a;
-    color: white;
+    background: #121212;
+    color: #ffffff;
 }
 
 body.dark-mode nav {
-    background: #333;
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
 }
 
-body.dark-mode .project-card,
-body.dark-mode .blog-card,
-body.dark-mode .testimonial-card {
+body.dark-mode .project-card {
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+}
+
+body.dark-mode .skill-bar span {
+    color: #fff;
+}
+
+body.dark-mode .bar {
     background: #333;
-    color: white;
 }
 
 body.dark-mode .btn {
     background: #ff6b6b;
+    color: white;
+}
+
+body.dark-mode .resume-btn {
+    background: #3d3d3d;
+    color: white;
+}
+
+body.dark-mode .gradient-border::before {
+    background: linear-gradient(45deg, #ff4d4d, #3ec7be);
+}
+
+body.dark-mode .contact-links .btn {
+    background: #333;
+    border: 1px solid #444;
+}
+
+body.dark-mode .contact-links .btn:hover {
+    background: #444;
 }
