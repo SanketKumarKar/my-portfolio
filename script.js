@@ -15,32 +15,6 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
 
-// Custom Cursor
-const cursor = document.createElement('div');
-const follower = document.createElement('div');
-cursor.className = 'cursor';
-follower.className = 'cursor-follower';
-document.body.appendChild(cursor);
-document.body.appendChild(follower);
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    follower.style.left = e.clientX + 6 + 'px';
-    follower.style.top = e.clientY + 6 + 'px';
-});
-
-document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5)';
-        follower.style.transform = 'scale(2)';
-    });
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        follower.style.transform = 'scale(1)';
-    });
-});
-
 // Animated Skill Bars
 document.querySelectorAll('.skill-bar').forEach(bar => {
     const progress = bar.querySelector('.progress');
