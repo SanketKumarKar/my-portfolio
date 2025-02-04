@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -19,6 +24,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="btn">🌙</button>
         </div>
     </nav>
 
@@ -28,6 +34,13 @@
             <h1>Hi, I'm <span class="highlight">Sanket Kumar Kar</span></h1>
             <p>A passionate developer building awesome things.</p>
             <a href="#projects" class="btn">View My Work</a>
+            <div class="scroll-prompt">↓</div>
+        </div>
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape circle"></div>
+            <div class="shape triangle"></div>
+            <div class="shape square"></div>
         </div>
     </section>
 
@@ -35,19 +48,13 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hi, I’m Sanket Kar, a passionate and detail-oriented developer with a love for building innovative solutions that solve real-world problems. With a strong foundation in Python, JavaScript, HTML/CSS, Machine Learning, I enjoy turning ideas into functional and user-friendly applications.
-
-I have [X years] of experience working on web development, data analysis, and supervised learning of AI, and I’m always eager to learn new technologies and expand my skill set. My journey in tech started with [mention how you got started, e.g., a coding bootcamp, self-learning, or a university degree], and since then, I’ve been hooked on creating meaningful and impactful projects.
-
-When I’m not coding, you can find me [mention your hobbies or passions, e.g., exploring the latest tech trends, contributing to open-source projects, or hiking in nature]. I believe in continuous growth and collaboration, and I’m excited to connect with like-minded individuals to create something amazing together.
-
-Let’s build the future, one line of code at a time!.</p>
+            <p>Hi, I’m Sanket Kumar Kar, a passionate and detail-oriented developer with a love for building innovative solutions that solve real-world problems. With a strong foundation in Python, JavaScript, and web development, I enjoy turning ideas into functional and user-friendly applications.</p>
             <div class="skills">
                 <h3>Skills</h3>
                 <div class="skill-tags">
                     <span>Python</span>
-                    <span>HTML/CSS</span>
                     <span>JavaScript</span>
+                    <span>HTML/CSS</span>
                     <span>Machine Learning</span>
                 </div>
             </div>
@@ -66,6 +73,12 @@ Let’s build the future, one line of code at a time!.</p>
                     <p>A brief description of your project.</p>
                     <a href="#" class="btn">View Demo</a>
                 </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>A brief description of your project.</p>
+                    <a href="#" class="btn">View Demo</a>
+                </div>
                 <!-- Add more project cards here -->
             </div>
         </div>
@@ -76,16 +89,16 @@ Let’s build the future, one line of code at a time!.</p>
         <div class="container">
             <h2>Get in Touch</h2>
             <div class="contact-info">
-                <a href="mailto:sanketkumarkar@gmail.com"><i class="fas fa-envelope"></i> sanketkumarkar@gmail.com</a>
+                <a href="mailto:sanketkumarkar@example.com"><i class="fas fa-envelope"></i> sanketkumarkar@example.com</a>
                 <a href="https://github.com/sanketkumarkar"><i class="fab fa-github"></i> GitHub</a>
-                <a href="www.linkedin.com/in/sanketkumarkar"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://linkedin.com/in/sanketkumarkar"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 SanketKumarKar. All rights reserved.</p>
+        <p>&copy; 2024 Sanket Kumar Kar. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
