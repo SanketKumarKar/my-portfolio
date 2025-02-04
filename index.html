@@ -18,6 +18,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="btn">🌙</button>
         </div>
     </nav>
 
@@ -27,6 +28,7 @@
             <h1>Hi, I'm <span class="highlight">Sanket Kumar Kar</span></h1>
             <p class="subtitle">Full Stack Developer & Machine Learning Enthusiast</p>
             <a href="#projects" class="btn">View My Work</a>
+            <a href="Resume Final.pdf" download class="btn resume-btn">Download Resume</a>
         </div>
     </section>
 
@@ -35,18 +37,25 @@
         <div class="container">
             <h2>About Me</h2>
             <p>A passionate developer with expertise in building full-stack web applications and implementing machine learning solutions. With 2+ years of hands-on experience in Python, JavaScript, and modern web technologies, I specialize in creating efficient, scalable solutions that solve real-world problems.</p>
-            <p>My journey in tech began with a fascination for artificial intelligence, which evolved into a professional career combining software development with data science. When I'm not coding, you'll find me contributing to open-source projects, exploring new tech stacks, or mentoring aspiring developers.</p>
             <div class="skills">
                 <h3>Technical Skills</h3>
-                <div class="skill-tags">
-                    <span>Python</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>Machine Learning</span>
-                    <span>SQL</span>
-                    <span>Git</span>
-                    <span>AWS</span>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <span>Python</span>
+                        <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>JavaScript</span>
+                        <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>React</span>
+                        <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <span>Machine Learning</span>
+                        <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,18 +71,34 @@
                     <img src="project1.jpg" alt="Project 1">
                     <h3>AI-Powered Analytics Platform</h3>
                     <p>Machine learning-driven data visualization tool with real-time insights</p>
-                    <a href="#" class="btn">View Project</a>
+                    <button class="btn view-details" data-modal="modal1">View Details</button>
                 </div>
                 <!-- Project 2 -->
                 <div class="project-card">
                     <img src="project2.jpg" alt="Project 2">
                     <h3>E-commerce Automation System</h3>
                     <p>Full-stack solution integrating inventory management and AI recommendations</p>
-                    <a href="#" class="btn">View Project</a>
+                    <button class="btn view-details" data-modal="modal2">View Details</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>AI-Powered Analytics Platform</h3>
+            <p>Detailed description of the project, technologies used, challenges faced, and outcomes achieved.</p>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>E-commerce Automation System</h3>
+            <p>Detailed description of the project, technologies used, challenges faced, and outcomes achieved.</p>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact">
