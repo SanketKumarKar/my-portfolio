@@ -284,7 +284,7 @@ footer {
 /* Dark Mode */
 body.dark-mode {
     background: #121212;
-    color: #ffffff;
+    color: #e0e0e0; /* Changed from white for better readability */
 }
 
 body.dark-mode nav {
@@ -292,9 +292,25 @@ body.dark-mode nav {
     border-bottom: 1px solid #333;
 }
 
+/* Fix for headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .highlight {
+    color: #ffffff !important;
+}
+
+body.dark-mode .subtitle {
+    color: #b0b0b0 !important;
+}
+
 body.dark-mode .project-card {
     background: #2d2d2d;
     border: 1px solid #3d3d3d;
+}
+
+body.dark-mode .project-card p {
+    color: #cccccc !important;
 }
 
 body.dark-mode .skill-bar span {
@@ -322,6 +338,7 @@ body.dark-mode .gradient-border::before {
 body.dark-mode .contact-links .btn {
     background: #333;
     border: 1px solid #444;
+    color: white;
 }
 
 body.dark-mode .contact-links .btn:hover {
