@@ -1,58 +1,16 @@
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Animated Skill Bars
-document.querySelectorAll('.skill-bar').forEach(bar => {
-    const progress = bar.querySelector('.progress');
-    const width = progress.style.width;
-    progress.style.setProperty('--target-width', width);
-    progress.style.width = '0';
-    
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                bar.classList.add('visible');
-                progress.style.width = width;
-            }
-        });
-    });
-    observer.observe(bar);
-});
-
-// Scroll-Triggered Animations
-const scrollObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('animate-on-scroll');
-        }
-    });
-});
-
-document.querySelectorAll('.project-card, .skill-bar, #contact').forEach(el => {
-    scrollObserver.observe(el);
-});
-
-// Create Tech Background
+// Initialize Tech Background
 function createTechBackground() {
+    // Create particles
     const particlesContainer = document.querySelector('.particles');
-    const particleCount = 50;
-    
-    for(let i = 0; i < particleCount; i++) {
+    for(let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 10 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particle.style.animationDelay = Math.random() * 20 + 's';
         particlesContainer.appendChild(particle);
     }
 
+    // Create hex grid elements
     const hexGrid = document.querySelector('.hex-grid');
     for(let i = 0; i < 200; i++) {
         const hex = document.createElement('div');
@@ -62,7 +20,43 @@ function createTechBackground() {
         hex.style.animation = `hexPulse ${5 + Math.random() * 10}s infinite`;
         hexGrid.appendChild(hex);
     }
+
+    // Create matrix effect
+    const matrix = document.querySelector('.matrix-fall');
+    for(let i = 0; i < 100; i++) {
+        const digit = document.createElement('div');
+        digit.textContent = Math.random().toString(36).substr(2,1);
+        digit.className = 'matrix-digit';
+        digit.style.left = Math.random() * 100 + '%';
+        digit.style.animationDelay = Math.random() * 10 + 's';
+        matrix.appendChild(digit);
+    }
 }
 
-// Initialize background
-createTechBackground();
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Initialize when page loads
+window.addEventListener('load', () => {
+    createTechBackground();
+    
+    // Add scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.skill-bar, .project-card').forEach(el => {
+        observer.observe(el);
+    });
+});
