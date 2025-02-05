@@ -52,3 +52,33 @@ document.querySelectorAll('.project-card, .skill-bar, #contact').forEach(el => {
   50% { transform: scale(1.5) rotate(180deg); opacity: 0.3; }
   100% { transform: scale(1) rotate(360deg); opacity: 0.1; }
 }
+
+// Add after existing JS
+function createTechBackground() {
+  // Create particles
+  const particlesContainer = document.querySelector('.particles');
+  const particleCount = 50;
+  
+  for(let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 10 + 's';
+    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+    particlesContainer.appendChild(particle);
+  }
+
+  // Create hex grid animation
+  const hexGrid = document.querySelector('.hex-grid');
+  for(let i = 0; i < 200; i++) {
+    const hex = document.createElement('div');
+    hex.className = 'hex';
+    hex.style.left = Math.random() * 100 + '%';
+    hex.style.top = Math.random() * 100 + '%';
+    hex.style.animation = `hexPulse ${5 + Math.random() * 10}s infinite`;
+    hexGrid.appendChild(hex);
+  }
+}
+
+// Initialize background
+createTechBackground();
