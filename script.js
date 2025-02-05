@@ -38,3 +38,17 @@ const scrollObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.project-card, .skill-bar, #contact').forEach(el => {
     scrollObserver.observe(el);
 });
+.hex {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(78, 205, 196, 0.1);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: hexPulse 5s infinite;
+}
+
+@keyframes hexPulse {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.1; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 0.3; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.1; }
+}
