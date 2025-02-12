@@ -1,62 +1,50 @@
-// Initialize Tech Background
-function createTechBackground() {
-    // Create particles
-    const particlesContainer = document.querySelector('.particles');
-    for(let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particlesContainer.appendChild(particle);
-    }
+// script.js
 
-    // Create hex grid elements
-    const hexGrid = document.querySelector('.hex-grid');
-    for(let i = 0; i < 200; i++) {
-        const hex = document.createElement('div');
-        hex.className = 'hex';
-        hex.style.left = Math.random() * 100 + '%';
-        hex.style.top = Math.random() * 100 + '%';
-        hex.style.animation = `hexPulse ${5 + Math.random() * 10}s infinite`;
-        hexGrid.appendChild(hex);
-    }
-
-    // Create matrix effect
-    const matrix = document.querySelector('.matrix-fall');
-    for(let i = 0; i < 100; i++) {
-        const digit = document.createElement('div');
-        digit.textContent = Math.random().toString(36).substr(2,1);
-        digit.className = 'matrix-digit';
-        digit.style.left = Math.random() * 100 + '%';
-        digit.style.animationDelay = Math.random() * 10 + 's';
-        matrix.appendChild(digit);
-    }
-}
-
-// Smooth Scroll
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Initialize when page loads
-window.addEventListener('load', () => {
-    createTechBackground();
-    
-    // Add scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
+// Basic form validation
+const form = document.getElementById('contact-form');
 
-    document.querySelectorAll('.skill-bar, .project-card').forEach(el => {
-        observer.observe(el);
-    });
+form.addEventListener('submit', (e) => {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        e.preventDefault(); // Prevent form submission
+    }
+    // You can add more robust email validation here
 });
+
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-theme')) {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        localStorage.setItem('theme', 'light'); // Store the theme
+    } else {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark'); // Store the theme
+    }
+});
+
+// Check for saved theme in local storage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+}
