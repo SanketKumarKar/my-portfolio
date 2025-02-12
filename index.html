@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar Kar -Portfolio</title>
+    <title>Sanket Kumar Kar - Cybersecurity & AI Portfolio</title>
+    <meta name="description" content="Sanket Kumar Kar's Cybersecurity and AI Portfolio. Showcasing expertise in cloud security, penetration testing, AI model development, and more.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
 
     <header>
         <nav>
             <div class="logo">Sanket Kumar Kar</div>
-            <ul>
+            <button id="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+            </button>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Cybersecurity</a></li>
+                 <li><a href="#ai-projects">AI</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-             <!-- Light/Dark Theme Toggle -->
+
              <button id="theme-toggle" aria-label="Toggle Dark Mode">
                 <i class="fas fa-moon"></i>
                 <i class="fas fa-sun"></i>
@@ -30,80 +38,124 @@
         <section id="hero">
             <div class="hero-content">
                 <h1>Sanket Kumar Kar</h1>
-                <p>Cybersecurity Specialist | Ethical Hacker | Passionate Coder</p>
-                <a href="#projects" class="cta-button">Explore My Fortress</a>
+                <p>Cybersecurity & AI Specialist | Building Secure and Intelligent Systems</p>
+                <a href="#projects" class="cta-button">Explore My Work</a>
             </div>
         </section>
 
         <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="placeholder-image.jpg" alt="Sanket Kumar Kar" class="profile-image floating">
-                <p>A highly motivated cybersecurity specialist, dancing through digital landscapes to fortify defenses!  Proficient in penetration testing, network security, and incident response.  Always eager to learn and contribute to a safer online environment, one playful hack at a time.</p>
-                <a href="FinalResume.pdf" class="download-button" download="SanketKumarKar_Resume.pdf"><i class="fas fa-download"></i> Download My Playbook (Resume)</a>
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="placeholder-image.jpg" alt="Sanket Kumar Kar" class="profile-image floating">
+                    <p>A cybersecurity and AI specialist with a passion for creating secure and intelligent systems. My expertise lies in building robust defenses against cyber threats and leveraging AI to solve complex challenges. Committed to innovation and continuous learning in the ever-evolving tech landscape.</p>
+                    <a href="FinalResume.pdf" class="download-button" download="SanketKumarKar_Resume.pdf"><i class="fas fa-download"></i> Download Resume</a>
+                </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>My Digital Sandcastles</h2>
-            <div class="projects-grid">
+            <div class="container">
+                <h2>Cybersecurity Projects</h2>
+                <div class="projects-grid">
 
-              <div class="project-card">
-                  <img src="project1.jpeg" alt="Project 1" class="project-image">
-                  <h3>Operation: Cloud Shield</h3>
-                  <p>Designed a robust cloud security architecture to protect against advanced persistent threats. Implemented multi-factor authentication and intrusion detection systems.</p>
-                  <a href="#" class="project-link">Fortify the Details</a>
-              </div>
+                  <div class="project-card">
+                      <img src="project1.jpeg" alt="Cloud Security Architecture" class="project-image">
+                      <h3>Cloud Security Architecture</h3>
+                      <p>Designed and implemented a secure cloud infrastructure, incorporating multi-factor authentication, intrusion detection, and regular vulnerability assessments.</p>
+                      <a href="#" class="project-link">View Details</a>
+                  </div>
 
-              <div class="project-card">
-                  <img src="project2.jpeg" alt="Project 2" class="project-image">
-                  <h3>Project: Decryptopia</h3>
-                  <p>Developed a cutting-edge encryption algorithm with quantum-resistant properties.  Achieved unbreakable security with a dash of whimsical wizardry.</p>
-                  <a href="#" class="project-link">Unlock the Secrets</a>
-              </div>
+                  <div class="project-card">
+                      <img src="project2.jpeg" alt="Quantum-Resistant Encryption" class="project-image">
+                      <h3>Quantum-Resistant Encryption</h3>
+                      <p>Developed an advanced encryption algorithm with post-quantum cryptographic principles, ensuring data security against future quantum computing threats.</p>
+                      <a href="#" class="project-link">View Details</a>
+                  </div>
 
-              <div class="project-card">
-                  <img src="project3.jpeg" alt="Project 3" class="project-image">
-                  <h3>The Firewall Follies</h3>
-                  <p>Conducted extensive penetration testing on a corporate network, identifying and patching critical vulnerabilities before the bad guys could find them. Playful, yet effective!</p>
-                  <a href="#" class="project-link">Breach the Details</a>
-              </div>
+                  <div class="project-card">
+                      <img src="project3.jpeg" alt="Network Penetration Testing" class="project-image">
+                      <h3>Network Penetration Testing</h3>
+                      <p>Conducted thorough penetration testing to identify and remediate critical vulnerabilities in a corporate network, enhancing overall security posture.</p>
+                      <a href="#" class="project-link">View Details</a>
+                  </div>
 
+                </div>
+            </div>
+        </section>
+
+         <section id="ai-projects">
+            <div class="container">
+                <h2>AI Projects</h2>
+                <div class="projects-grid">
+
+                  <div class="project-card">
+                      <img src="ai_project1.jpeg" alt="AI-Powered Threat Detection" class="project-image">
+                      <h3>AI-Powered Threat Detection</h3>
+                      <p>Developed a machine learning model to identify and predict potential cyber threats by analyzing network traffic patterns and security logs.</p>
+                      <a href="#" class="project-link">View Details</a>
+                  </div>
+
+                  <div class="project-card">
+                      <img src="ai_project2.jpeg" alt="Automated Vulnerability Assessment" class="project-image">
+                      <h3>Automated Vulnerability Assessment</h3>
+                      <p>Created an AI-driven system to automate the vulnerability assessment process, significantly reducing the time and resources required for security audits.</p>
+                      <a href="#" class="project-link">View Details</a>
+                  </div>
+
+                  <div class="project-card">
+                      <img src="ai_project3.jpeg" alt="SANKY_AI Integration (Ollama Fork)" class="project-image">
+                      <h3>SANKY_AI Integration (Ollama Fork)</h3>
+                      <p>Explored and integrated large language models using Ollama to enhance cybersecurity capabilities. [ADD YOUR SPECIFIC DETAILS HERE]</p>
+                      <a href="https://github.com/SanketKumarKar/SANKY_AI" class="project-link">View on GitHub</a>
+                  </div>
+
+                </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2>My Bag of Tricks</h2>
-            <div class="skills-list">
-                <ul>
-                    <li><i class="fas fa-code"></i> Python (The Snake Charmer)</li>
-                    <li><i class="fas fa-shield-alt"></i> Network Security (The Digital Guardian)</li>
-                    <li><i class="fas fa-bug"></i> Penetration Testing (The Ethical Mischief Maker)</li>
-                    <li><i class="fas fa-database"></i> SQL (The Data Whisperer)</li>
-                    <li><i class="fas fa-server"></i> Cloud Security (The Cloud Navigator)</li>
-                </ul>
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <ul>
+                        <li><i class="fas fa-code"></i> Python</li>
+                        <li><i class="fas fa-shield-alt"></i> Network Security</li>
+                        <li><i class="fas fa-bug"></i> Penetration Testing</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                        <li><i class="fas fa-server"></i> Cloud Security (AWS, Azure)</li>
+                        <li><i class="fas fa-brain"></i> Machine Learning</li>
+                        <li><i class="fas fa-project-diagram"></i> AI Model Development</li>
+                        <li><i class="fas fa-robot"></i> LLM Integration</li>
+                        <li><i class="fas fa-universal-access"></i> Web Accessibility</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Let's Connect!</h2>
-            <p class="contact-blurb">Ready to collaborate on a secure digital adventure? Drop me a line, and let's build something amazing (and safe!).</p>
-            <form id="contact-form">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+            <div class="container">
+                <h2>Contact</h2>
+                <p class="contact-blurb">I'm always open to discussing new opportunities and collaborations. Feel free to reach out!</p>
+                <form id="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sanketkumarkar" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/SanketKumarKar" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="mailto:sanketkumarkar@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sanket Kumar Kar. All rights reserved.  Crafted with ❤️ and a sprinkle of cybersecurity magic.</p>
+        <div class="container">
+            <p>&copy; 2025 Sanket Kumar Kar. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
