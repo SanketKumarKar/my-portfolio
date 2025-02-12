@@ -1,5 +1,22 @@
 // script.js
 
+// Mobile Navigation Toggle
+const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+const primaryNavigation = document.getElementById('primary-navigation');
+
+mobileNavToggle.addEventListener('click', () => {
+    const visibility = primaryNavigation.getAttribute("data-visible");
+
+    if (visibility === "false") {
+        primaryNavigation.setAttribute('data-visible', true);
+        mobileNavToggle.setAttribute('aria-expanded', true);
+    } else if (visibility === "true") {
+       primaryNavigation.setAttribute('data-visible', false);
+       mobileNavToggle.setAttribute('aria-expanded', false);
+    }
+});
+
+
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -21,7 +38,7 @@ form.addEventListener('submit', (e) => {
 
     if (!name || !email || !message) {
         alert('Please fill in all fields.');
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault();
     }
     // You can add more robust email validation here
 });
@@ -34,11 +51,11 @@ themeToggle.addEventListener('click', () => {
     if (body.classList.contains('dark-theme')) {
         body.classList.remove('dark-theme');
         body.classList.add('light-theme');
-        localStorage.setItem('theme', 'light'); // Store the theme
+        localStorage.setItem('theme', 'light');
     } else {
         body.classList.remove('light-theme');
         body.classList.add('dark-theme');
-        localStorage.setItem('theme', 'dark'); // Store the theme
+        localStorage.setItem('theme', 'dark');
     }
 });
 
