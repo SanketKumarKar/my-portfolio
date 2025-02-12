@@ -3,116 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar Kar | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Sanket Kumar Kar -Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <!-- Tech Background Elements -->
-    <div class="tech-background">
-        <div class="hex-grid"></div>
-        <div class="particles"></div>
-        <div class="circuit-lines"></div>
-        <div class="matrix-fall"></div>
-    </div>
+<body class="dark-theme">
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">Sanket Kumar Kar</a>
-            <ul class="nav-links">
+    <header>
+        <nav>
+            <div class="logo">Sanket Kumar Kar</div>
+            <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+             <!-- Light/Dark Theme Toggle -->
+             <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container">
-            <h1>Hi, I'm <span class="highlight">Sanket Kumar Kar</span></h1>
-            <p class="subtitle">Full Stack Developer & Machine Learning Enthusiast</p>
-            <a href="#projects" class="btn">View My Work</a>
-            <a href="Resume Final.pdf" download class="btn resume-btn">Download Resume</a>
-        </div>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Sanket Kumar Kar</h1>
+                <p>Cybersecurity Specialist | Ethical Hacker | Passionate Coder</p>
+                <a href="#projects" class="cta-button">Explore My Fortress</a>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
+        <section id="about">
             <h2>About Me</h2>
-            <p>A passionate developer with expertise in building full-stack web applications and implementing machine learning solutions. With 2+ years of hands-on experience in Python, JavaScript, and modern web technologies, I specialize in creating efficient, scalable solutions that solve real-world problems.</p>
-            <div class="skills">
-                <h3>Technical Skills</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar">
-                        <span>Python</span>
-                        <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <span>JavaScript</span>
-                        <div class="bar"><div class="progress" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <span>React</span>
-                        <div class="bar"><div class="progress" style="width: 80%;"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <span>Machine Learning</span>
-                        <div class="bar"><div class="progress" style="width: 75%;"></div></div>
-                    </div>
-                </div>
+            <div class="about-content">
+                <img src="placeholder-image.jpg" alt="Sanket Kumar Kar" class="profile-image floating">
+                <p>A highly motivated cybersecurity specialist, dancing through digital landscapes to fortify defenses!  Proficient in penetration testing, network security, and incident response.  Always eager to learn and contribute to a safer online environment, one playful hack at a time.</p>
+                <a href="FinalResume.pdf" class="download-button" download="SanketKumarKar_Resume.pdf"><i class="fas fa-download"></i> Download My Playbook (Resume)</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <div class="project-card gradient-border">
-                    <img src="project1.jpg" alt="Project 1">
-                    <h3>AI-Powered Analytics Platform</h3>
-                    <p>Machine learning-driven data visualization tool with real-time insights</p>
-                    <button class="btn view-details">View Details</button>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card gradient-border">
-                    <img src="project2.jpg" alt="Project 2">
-                    <h3>E-commerce Automation System</h3>
-                    <p>Full-stack solution integrating inventory management and AI recommendations</p>
-                    <button class="btn view-details">View Details</button>
-                </div>
+        <section id="projects">
+            <h2>My Digital Sandcastles</h2>
+            <div class="projects-grid">
+
+              <div class="project-card">
+                  <img src="project1.jpeg" alt="Project 1" class="project-image">
+                  <h3>Operation: Cloud Shield</h3>
+                  <p>Designed a robust cloud security architecture to protect against advanced persistent threats. Implemented multi-factor authentication and intrusion detection systems.</p>
+                  <a href="#" class="project-link">Fortify the Details</a>
+              </div>
+
+              <div class="project-card">
+                  <img src="project2.jpeg" alt="Project 2" class="project-image">
+                  <h3>Project: Decryptopia</h3>
+                  <p>Developed a cutting-edge encryption algorithm with quantum-resistant properties.  Achieved unbreakable security with a dash of whimsical wizardry.</p>
+                  <a href="#" class="project-link">Unlock the Secrets</a>
+              </div>
+
+              <div class="project-card">
+                  <img src="project3.jpeg" alt="Project 3" class="project-image">
+                  <h3>The Firewall Follies</h3>
+                  <p>Conducted extensive penetration testing on a corporate network, identifying and patching critical vulnerabilities before the bad guys could find them. Playful, yet effective!</p>
+                  <a href="#" class="project-link">Breach the Details</a>
+              </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Let's collaborate on innovative solutions or discuss technology trends!</p>
-            <div class="contact-links">
-                <a href="mailto:sanketkumarkar@gmail.com" class="btn" target="_blank">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="https://github.com/SanketKumarKar" class="btn" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/sanketkumarkar" class="btn" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
+        <section id="skills">
+            <h2>My Bag of Tricks</h2>
+            <div class="skills-list">
+                <ul>
+                    <li><i class="fas fa-code"></i> Python (The Snake Charmer)</li>
+                    <li><i class="fas fa-shield-alt"></i> Network Security (The Digital Guardian)</li>
+                    <li><i class="fas fa-bug"></i> Penetration Testing (The Ethical Mischief Maker)</li>
+                    <li><i class="fas fa-database"></i> SQL (The Data Whisperer)</li>
+                    <li><i class="fas fa-server"></i> Cloud Security (The Cloud Navigator)</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="contact">
+            <h2>Let's Connect!</h2>
+            <p class="contact-blurb">Ready to collaborate on a secure digital adventure? Drop me a line, and let's build something amazing (and safe!).</p>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2024 Sanket Kumar Kar. All rights reserved.</p>
+        <p>&copy; 2025 Sanket Kumar Kar. All rights reserved.  Crafted with ❤️ and a sprinkle of cybersecurity magic.</p>
     </footer>
 
     <script src="script.js"></script>
