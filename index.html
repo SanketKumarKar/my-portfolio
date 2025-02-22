@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanket Kumar Kar - AI Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </head>
@@ -19,8 +19,8 @@
       <a href="FinalResume.pdf" download class="download-btn">Download Resume <i class="fas fa-download"></i></a>
       <div class="navigation-links">
         <a href="#about"><i class="fas fa-user"></i> About Me</a>
-        <a href="#projects"><i class="fas fa-code"></i> Projects</a>
-        <a href="#skills"><i class="fas fa-cogs"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
       </div>
     </div>
@@ -29,7 +29,7 @@
 
   <!-- About Section -->
   <section id="about">
-    <div class="about-content">
+    <div class="about-content fade-in-scroll">
       <div class="avatar-container">
         <img src="avatar.jpeg" alt="Avatar" class="avatar neon-border">
       </div>
@@ -41,8 +41,6 @@
           <span><i class="fas fa-brain"></i> TensorFlow</span>
           <span><i class="fas fa-project-diagram"></i> PyTorch</span>
           <span><i class="fas fa-chart-line"></i> R</span>
-          <span><i class="fas fa-database"></i> SQL</span>
-          <span><i class="fab fa-java"></i> Java</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -72,34 +70,34 @@
       <button class="filter-btn" data-filter="pm">Predictive Modeling</button>
     </div>
     <div class="project-grid">
-      <div class="project-card" data-category="nlp">
+      <div class="project-card fade-in-scroll" data-category="nlp">
         <img src="project1.jpeg" alt="Project 1" class="project-image">
         <h3>Sentiment Analysis Tool</h3>
         <p>A tool to analyze sentiment in social media posts using TensorFlow and NLP techniques.</p>
         <div class="technologies">
-          <span><i class="fab fa-python"></i> Python</span>
-          <span><i class="fas fa-brain"></i> TensorFlow</span>
-          <span><i class="fas fa-language"></i> NLTK</span>
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>NLTK</span>
         </div>
       </div>
-      <div class="project-card" data-category="cv">
+      <div class="project-card fade-in-scroll" data-category="cv">
         <img src="project2.jpeg" alt="Project 2" class="project-image">
         <h3>Facial Recognition System</h3>
         <p>A real-time facial recognition system built with OpenCV and PyTorch.</p>
         <div class="technologies">
-          <span><i class="fab fa-python"></i> Python</span>
-          <span><i class="fas fa-project-diagram"></i> PyTorch</span>
-          <span><i class="fas fa-eye"></i> OpenCV</span>
+          <span>Python</span>
+          <span>PyTorch</span>
+          <span>OpenCV</span>
         </div>
       </div>
-      <div class="project-card" data-category="pm">
+      <div class="project-card fade-in-scroll" data-category="pm">
         <img src="project3.jpeg" alt="Project 3" class="project-image">
         <h3>Sales Prediction Model</h3>
         <p>A predictive model for forecasting sales using time-series data and Scikit-learn.</p>
         <div class="technologies">
-          <span><i class="fab fa-python"></i> Python</span>
-          <span><i class="fas fa-chart-line"></i> Scikit-learn</span>
-          <span><i class="fas fa-table"></i> Pandas</span>
+          <span>Python</span>
+          <span>Scikit-learn</span>
+          <span>Pandas</span>
         </div>
       </div>
     </div>
@@ -108,21 +106,21 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-grid">
+    <div class="skills-grid fade-in-scroll">
       <div class="skill-category">
-        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+        <h3>Programming Languages</h3>
         <div class="radial-chart" data-percent="90">Python</div>
         <div class="radial-chart" data-percent="80">R</div>
         <div class="radial-chart" data-percent="70">Java</div>
       </div>
       <div class="skill-category">
-        <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
+        <h3>AI Frameworks</h3>
         <div class="radial-chart" data-percent="85">TensorFlow</div>
         <div class="radial-chart" data-percent="75">PyTorch</div>
         <div class="radial-chart" data-percent="80">Keras</div>
       </div>
       <div class="skill-category">
-        <h3><i class="fas fa-chart-bar"></i> Data Analysis Tools</h3>
+        <h3>Data Analysis Tools</h3>
         <div class="radial-chart" data-percent="95">Pandas</div>
         <div class="radial-chart" data-percent="90">NumPy</div>
         <div class="radial-chart" data-percent="85">Matplotlib</div>
