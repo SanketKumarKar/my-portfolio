@@ -29,7 +29,6 @@ h1, h2, h3 {
 
 .hero-content {
   z-index: 2;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .hero-background {
@@ -51,15 +50,13 @@ h1, h2, h3 {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .download-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+  background: #00e6b8;
 }
 
-/* Navigation Links */
 .navigation-links {
   margin-top: 20px;
 }
@@ -93,16 +90,6 @@ h1, h2, h3 {
   border-radius: 50%;
   border: 3px solid #00ffcc;
   box-shadow: 0 0 10px #00ffcc;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
 }
 
 .skills-icons {
@@ -117,11 +104,6 @@ h1, h2, h3 {
   border: 1px solid #00ffcc;
   border-radius: 5px;
   color: #00ffcc;
-  transition: transform 0.3s ease;
-}
-
-.skills-icons span:hover {
-  transform: scale(1.1);
 }
 
 .timeline {
@@ -136,18 +118,6 @@ h1, h2, h3 {
   padding: 15px;
   border-radius: 5px;
   border-left: 3px solid #00ffcc;
-  animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 /* Projects Section */
@@ -169,15 +139,10 @@ h1, h2, h3 {
   background: transparent;
   color: #00ffcc;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .filter-btn.active {
-  background: #00ffcc;
-  color: #0d0d0d;
-}
-
-.filter-btn:hover {
   background: #00ffcc;
   color: #0d0d0d;
 }
@@ -193,12 +158,15 @@ h1, h2, h3 {
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #00ffcc;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+}
+
+.project-card h3 {
+  color: #00ffcc;
 }
 
 .project-image {
@@ -244,16 +212,6 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   margin: 20px auto;
-  animation: grow 1s ease-in-out;
-}
-
-@keyframes grow {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
 }
 
 /* Contact Section */
@@ -285,12 +243,11 @@ h1, h2, h3 {
   background: #00ffcc;
   color: #0d0d0d;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 #contact-form button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+  background: #00e6b8;
 }
 
 .social-links {
@@ -301,11 +258,18 @@ h1, h2, h3 {
   margin: 0 10px;
   color: #00ffcc;
   text-decoration: none;
-  transition: transform 0.3s ease;
 }
 
-.social-links a:hover {
-  transform: translateY(-5px);
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Scroll-to-Top Button */
@@ -323,20 +287,9 @@ h1, h2, h3 {
   font-size: 18px;
   box-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
   z-index: 1000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .scroll-to-top:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  background: #00e6b8;
 }
