@@ -1,74 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanket Kumar Kar Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanket Kumar Kar - AI Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Matrix Background -->
-    <div class="matrix-bg"></div>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="neon-text">Sanket Kumar Kar</h1>
+      <h2 class="neon-text">AI Researcher & Machine Learning Engineer</h2>
+      <p class="neon-text">Expert in Natural Language Processing, Computer Vision, and Predictive Modeling</p>
+      <a href="FinalResume.pdf" download class="download-btn">Download Resume</a>
+    </div>
+    <div class="hero-background"></div>
+  </section>
 
-    <!-- Navigation Bar -->
-    <header id="home">
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-content">
+      <div class="avatar-container">
+        <img src="avatar.jpeg" alt="Avatar" class="avatar neon-border">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I specialize in building intelligent systems using cutting-edge AI and ML technologies. With a strong foundation in computer science and hands-on experience in AI research, I am passionate about solving real-world problems through innovation.</p>
+        <div class="skills-icons">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>PyTorch</span>
+          <span>R</span>
+          <span>SQL</span>
+          <span>Java</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>2028 - Present</h3>
+            <p>Senior AI Researcher at Tech Innovators</p>
+          </div>
+          <div class="timeline-item">
+            <h3>2024 - 2028</h3>
+            <p>Vellore Institute of Technology</p>
+          </div>
+          <div class="timeline-item">
+            <h3>2019 - 2024</h3>
+            <p>Gurukul The School</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Section -->
-        <section id="about" class="section-padding">
-            <h2>About Me</h2>
-            <p>Hi, I'm Sanket Kumar Kar, a passionate developer with expertise in web development and design. I love creating elegant and functional solutions for real-world problems.</p>
-        </section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nlp">Natural Language Processing</button>
+      <button class="filter-btn" data-filter="cv">Computer Vision</button>
+      <button class="filter-btn" data-filter="pm">Predictive Modeling</button>
+    </div>
+    <div class="project-grid">
+      <div class="project-card" data-category="nlp">
+        <img src="project1.jpeg" alt="Project 1" class="project-image">
+        <h3>Sentiment Analysis Tool</h3>
+        <p>A tool to analyze sentiment in social media posts using TensorFlow and NLP techniques.</p>
+        <div class="technologies">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>NLTK</span>
+        </div>
+      </div>
+      <div class="project-card" data-category="cv">
+        <img src="project2.jpeg" alt="Project 2" class="project-image">
+        <h3>Facial Recognition System</h3>
+        <p>A real-time facial recognition system built with OpenCV and PyTorch.</p>
+        <div class="technologies">
+          <span>Python</span>
+          <span>PyTorch</span>
+          <span>OpenCV</span>
+        </div>
+      </div>
+      <div class="project-card" data-category="pm">
+        <img src="project3.jpeg" alt="Project 3" class="project-image">
+        <h3>Sales Prediction Model</h3>
+        <p>A predictive model for forecasting sales using time-series data and Scikit-learn.</p>
+        <div class="technologies">
+          <span>Python</span>
+          <span>Scikit-learn</span>
+          <span>Pandas</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-padding">
-            <h2>Projects</h2>
-            <div class="project-cards">
-                <div class="card">
-                    <h3>Project 1</h3>
-                    <p>Description of Project 1 Will be added when done IRL.</p>
-                </div>
-                <div class="card">
-                    <h3>Project 2</h3>
-                    <p>Description of Project 2 Will be added when done IRL.</p>
-                </div>
-                <div class="card">
-                    <h3>Project 3</h3>
-                    <p>Description of Project 3 Will be added when done IRL.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Programming Languages</h3>
+        <div class="radial-chart" data-percent="90">Python</div>
+        <div class="radial-chart" data-percent="80">R</div>
+        <div class="radial-chart" data-percent="70">Java</div>
+      </div>
+      <div class="skill-category">
+        <h3>AI Frameworks</h3>
+        <div class="radial-chart" data-percent="85">TensorFlow</div>
+        <div class="radial-chart" data-percent="75">PyTorch</div>
+        <div class="radial-chart" data-percent="80">Keras</div>
+      </div>
+      <div class="skill-category">
+        <h3>Data Analysis Tools</h3>
+        <div class="radial-chart" data-percent="95">Pandas</div>
+        <div class="radial-chart" data-percent="90">NumPy</div>
+        <div class="radial-chart" data-percent="85">Matplotlib</div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Sanket Kumar Kar. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <label for="user_name">Name</label>
+      <input type="text" id="user_name" name="user_name" required>
+      <label for="user_email">Email</label>
+      <input type="email" id="user_email" name="user_email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank">LinkedIn</a>
+      <a href="https://github.com/sanketkumarkar" target="_blank">GitHub</a>
+      <a href="mailto:sanketkumarkar@gmail.com">Email</a>
+    </div>
+  </section>
 </body>
 </html>
