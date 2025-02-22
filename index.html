@@ -5,26 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanket Kumar Kar - AI Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
- <!-- Hero Section -->
-<section id="hero">
-  <div class="hero-content">
-    <h1 class="neon-text">Sanket Kumar Kar</h1>
-    <h2 class="neon-text">AI Researcher & Machine Learning Engineer</h2>
-    <p class="neon-text">Expert in Natural Language Processing, Computer Vision, and Predictive Modeling</p>
-    <a href="FinalResume.pdf" download class="download-btn">Download Resume</a>
-    <div class="navigation-links">
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="neon-text">Sanket Kumar Kar</h1>
+      <h2 class="neon-text">AI Researcher & Machine Learning Engineer</h2>
+      <p class="neon-text">Expert in Natural Language Processing, Computer Vision, and Predictive Modeling</p>
+      <a href="FinalResume.pdf" download class="download-btn">Download Resume <i class="fas fa-download"></i></a>
+      <div class="navigation-links">
+        <a href="#about"><i class="fas fa-user"></i> About Me</a>
+        <a href="#projects"><i class="fas fa-code"></i> Projects</a>
+        <a href="#skills"><i class="fas fa-cogs"></i> Skills</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-background"></div>
-</section>
+    <div class="hero-background"></div>
+  </section>
 
   <!-- About Section -->
   <section id="about">
@@ -36,12 +37,12 @@
         <h2>About Me</h2>
         <p>I specialize in building intelligent systems using cutting-edge AI and ML technologies. With a strong foundation in computer science and hands-on experience in AI research, I am passionate about solving real-world problems through innovation.</p>
         <div class="skills-icons">
-          <span>Python</span>
-          <span>TensorFlow</span>
-          <span>PyTorch</span>
-          <span>R</span>
-          <span>SQL</span>
-          <span>Java</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fas fa-brain"></i> TensorFlow</span>
+          <span><i class="fas fa-project-diagram"></i> PyTorch</span>
+          <span><i class="fas fa-chart-line"></i> R</span>
+          <span><i class="fas fa-database"></i> SQL</span>
+          <span><i class="fab fa-java"></i> Java</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -76,9 +77,9 @@
         <h3>Sentiment Analysis Tool</h3>
         <p>A tool to analyze sentiment in social media posts using TensorFlow and NLP techniques.</p>
         <div class="technologies">
-          <span>Python</span>
-          <span>TensorFlow</span>
-          <span>NLTK</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fas fa-brain"></i> TensorFlow</span>
+          <span><i class="fas fa-language"></i> NLTK</span>
         </div>
       </div>
       <div class="project-card" data-category="cv">
@@ -86,9 +87,9 @@
         <h3>Facial Recognition System</h3>
         <p>A real-time facial recognition system built with OpenCV and PyTorch.</p>
         <div class="technologies">
-          <span>Python</span>
-          <span>PyTorch</span>
-          <span>OpenCV</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fas fa-project-diagram"></i> PyTorch</span>
+          <span><i class="fas fa-eye"></i> OpenCV</span>
         </div>
       </div>
       <div class="project-card" data-category="pm">
@@ -96,9 +97,9 @@
         <h3>Sales Prediction Model</h3>
         <p>A predictive model for forecasting sales using time-series data and Scikit-learn.</p>
         <div class="technologies">
-          <span>Python</span>
-          <span>Scikit-learn</span>
-          <span>Pandas</span>
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fas fa-chart-line"></i> Scikit-learn</span>
+          <span><i class="fas fa-table"></i> Pandas</span>
         </div>
       </div>
     </div>
@@ -109,19 +110,19 @@
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>Programming Languages</h3>
+        <h3><i class="fas fa-code"></i> Programming Languages</h3>
         <div class="radial-chart" data-percent="90">Python</div>
         <div class="radial-chart" data-percent="80">R</div>
         <div class="radial-chart" data-percent="70">Java</div>
       </div>
       <div class="skill-category">
-        <h3>AI Frameworks</h3>
+        <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
         <div class="radial-chart" data-percent="85">TensorFlow</div>
         <div class="radial-chart" data-percent="75">PyTorch</div>
         <div class="radial-chart" data-percent="80">Keras</div>
       </div>
       <div class="skill-category">
-        <h3>Data Analysis Tools</h3>
+        <h3><i class="fas fa-chart-bar"></i> Data Analysis Tools</h3>
         <div class="radial-chart" data-percent="95">Pandas</div>
         <div class="radial-chart" data-percent="90">NumPy</div>
         <div class="radial-chart" data-percent="85">Matplotlib</div>
@@ -139,12 +140,12 @@
       <input type="email" id="user_email" name="user_email" required>
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
     <div class="social-links">
-      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank">LinkedIn</a>
-      <a href="https://github.com/sanketkumarkar" target="_blank">GitHub</a>
-      <a href="mailto:sanketkumarkar@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/sanketkumarkar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:sanketkumarkar@gmail.com"><i class="fas fa-envelope"></i> Email</a>
     </div>
   </section>
 </body>
