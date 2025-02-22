@@ -6,12 +6,14 @@ emailjs.init({
 // Contact Form Submission
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  emailjs.sendForm('service_el6zmci','template_wv6avkn', this)
+  emailjs.sendForm('service_el6zmci', 'template_wv6avkn', this)
     .then(() => {
       alert('Message sent successfully!');
+      document.getElementById('contact-form').reset(); // Clear the form
     })
     .catch((error) => {
       console.error('Failed to send message:', error);
+      alert('Failed to send message. Please try again.');
     });
 });
 
@@ -28,8 +30,10 @@ filterButtons.forEach(button => {
     projectCards.forEach(card => {
       if (filter === 'all' || card.getAttribute('data-category') === filter) {
         card.style.display = 'block';
+        card.classList.add('fade-in'); // Add fade-in animation
       } else {
         card.style.display = 'none';
+        card.classList.remove('fade-in');
       }
     });
   });
@@ -59,7 +63,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Scroll-to-Top Button
 const scrollToTopButton = document.createElement('button');
-scrollToTopButton.innerHTML = '↑';
+scrollToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
 scrollToTopButton.classList.add('scroll-to-top');
 document.body.appendChild(scrollToTopButton);
 
@@ -78,3 +82,6 @@ window.addEventListener('scroll', () => {
     scrollToTopButton.style.display = 'none';
   }
 });
+
+// Fade-in Animation on Scroll
+const fadeElements = document.querySelector
