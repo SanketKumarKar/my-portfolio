@@ -17,12 +17,6 @@
       <h2 class="neon-text">AI Researcher & Machine Learning Engineer</h2>
       <p class="neon-text">Expert in Natural Language Processing, Computer Vision, and Predictive Modeling</p>
       <a href="FinalResume.pdf" download class="download-btn">Download Resume <i class="fas fa-download"></i></a>
-      <div class="navigation-links">
-        <a href="#about"><i class="fas fa-user"></i> About Me</a>
-        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-      </div>
     </div>
     <div class="hero-background"></div>
   </section>
@@ -35,23 +29,22 @@
       </div>
       <div class="about-text">
         <h2>About Me</h2>
-        <p>I specialize in building intelligent systems using cutting-edge AI and ML technologies. With a strong foundation in computer science and hands-on experience in AI research, I am passionate about solving real-world problems through innovation.</p>
+        <p>I specialize in building intelligent systems using cutting-edge AI and ML technologies. With over 5 years of experience, I have worked on projects ranging from autonomous vehicles to advanced recommendation systems.</p>
         <div class="skills-icons">
           <span><i class="fab fa-python"></i> Python</span>
           <span><i class="fas fa-brain"></i> TensorFlow</span>
           <span><i class="fas fa-project-diagram"></i> PyTorch</span>
-          <span><i class="fas fa-chart-line"></i> R</span>
         </div>
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item fade-in-scroll">
             <h3>2028 - Present</h3>
             <p>Senior AI Researcher at Tech Innovators</p>
           </div>
-          <div class="timeline-item">
+          <div class="timeline-item fade-in-scroll">
             <h3>2024 - 2028</h3>
             <p>Vellore Institute of Technology</p>
           </div>
-          <div class="timeline-item">
+          <div class="timeline-item fade-in-scroll">
             <h3>2019 - 2024</h3>
             <p>Gurukul The School</p>
           </div>
@@ -106,24 +99,28 @@
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-grid fade-in-scroll">
-      <div class="skill-category">
+    <div class="skills-grid">
+      <div class="skill-category fade-in-scroll">
         <h3>Programming Languages</h3>
-        <div class="progress-bar" data-percent="90">Python</div>
-        <div class="progress-bar" data-percent="80">R</div>
-        <div class="progress-bar" data-percent="70">Java</div>
+        <div class="progress-bar" data-percent="90">
+          <div class="progress-track"></div>
+          <span>Python</span>
+        </div>
+        <div class="progress-bar" data-percent="80">
+          <div class="progress-track"></div>
+          <span>R</span>
+        </div>
       </div>
-      <div class="skill-category">
+      <div class="skill-category fade-in-scroll">
         <h3>AI Frameworks</h3>
-        <div class="progress-bar" data-percent="85">TensorFlow</div>
-        <div class="progress-bar" data-percent="75">PyTorch</div>
-        <div class="progress-bar" data-percent="80">Keras</div>
-      </div>
-      <div class="skill-category">
-        <h3>Data Analysis Tools</h3>
-        <div class="progress-bar" data-percent="95">Pandas</div>
-        <div class="progress-bar" data-percent="90">NumPy</div>
-        <div class="progress-bar" data-percent="85">Matplotlib</div>
+        <div class="progress-bar" data-percent="85">
+          <div class="progress-track"></div>
+          <span>TensorFlow</span>
+        </div>
+        <div class="progress-bar" data-percent="75">
+          <div class="progress-track"></div>
+          <span>PyTorch</span>
+        </div>
       </div>
     </div>
   </section>
@@ -132,19 +129,25 @@
   <section id="contact">
     <h2>Contact Me</h2>
     <form id="contact-form">
-      <label for="user_name">Name</label>
-      <input type="text" id="user_name" name="user_name" required>
-      <label for="user_email">Email</label>
-      <input type="email" id="user_email" name="user_email" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="form-group">
+        <input type="text" name="user_name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="user_email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Message" required></textarea>
+      </div>
       <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
     <div class="social-links">
-      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/sanketkumarkar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="mailto:sanketkumarkar@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/sanketkumarkar" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:sanketkumarkar@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 </body>
 </html>
