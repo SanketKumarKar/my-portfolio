@@ -3,113 +3,61 @@ emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
 
-// Contact Form Submission
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  emailjs.sendForm('service_el6zmci', 'template_wv6avkn', this)
+// Contact Form
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  emailjs.sendForm('service_el6zmci', 'template_wv6avkn', e.target)
     .then(() => {
       alert('Message sent successfully!');
-      document.getElementById('contact-form').reset(); // Clear the form
+      e.target.reset();
     })
     .catch((error) => {
-      console.error('Failed to send message:', error);
-      alert('Failed to send message. Please try again.');
+      console.error('Error:', error);
+      alert('Message failed to send. Please try again.');
     });
 });
 
-// Project Filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    const filter = button.getAttribute('data-filter');
-
-    projectCards.forEach(card => {
-      if (filter === 'all' || card.getAttribute('data-category') === filter) {
-        card.style.display = 'block';
-        card.classList.add('fade-in'); // Add fade-in animation
-      } else {
-        card.style.display = 'none';
-        card.classList.remove('fade-in');
-      }
-    });
-  });
-});
-
-// Progress Bar Animation
-const progressBars = document.querySelectorAll('.progress-bar');
-
-progressBars.forEach(bar => {
-  const percent = bar.getAttribute('data-percent');
-  bar.style.width = `${percent}%`;
-  bar.style.backgroundColor = `hsl(${percent}, 100%, 50%)`; // Dynamic color based on percentage
-});
-
-// Smooth Scrolling for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  });
-});
-
-// Scroll-to-Top Button
-const scrollToTopButton = document.createElement('button');
-scrollToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-scrollToTopButton.classList.add('scroll-to-top');
-document.body.appendChild(scrollToTopButton);
-
-scrollToTopButton.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-});
-
-// Show/Hide Scroll-to-Top Button
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollToTopButton.style.display = 'block';
-  } else {
-    scrollToTopButton.style.display = 'none';
-  }
-});
-
-// Fade-in Animation on Scroll
-const fadeElements = document.querySelectorAll('.fade-in-scroll');
-
+// Intersection Observer
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
-    } else {
-      entry.target.classList.remove('fade-in');
+      entry.target.classList.add('visible');
+      // Animate progress bars
+      if(entry.target.classList.contains('progress-track')) {
+        const percent = entry.target.parentElement.getAttribute('data-percent');
+        entry.target.style.width = `${percent}%`;
+      }
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.1 });
 
-fadeElements.forEach(element => {
-  observer.observe(element);
+document.querySelectorAll('.fade-in-scroll, .progress-track').forEach(el => {
+  observer.observe(el);
 });
 
-// Animated Background
-const heroBackground = document.querySelector('.hero-background');
-const colors = ['#00ffcc', '#ff00cc', '#cc00ff', '#00ccff'];
-let currentIndex = 0;
+// Project Filter
+document.querySelectorAll('.filter-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.filter;
+    
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? 
+        'block' : 'none';
+    });
+  });
+});
 
-function changeBackgroundColor() {
-  heroBackground.style.background = `linear-gradient(45deg, ${colors[currentIndex]}, ${colors[(currentIndex + 1) % colors.length]})`;
-  currentIndex = (currentIndex + 1) % colors.length;
-}
+// Scroll to Top
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+window.addEventListener('scroll', () => {
+  scrollToTopBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
+});
 
-setInterval(changeBackgroundColor, 5000); // Change color every 5 seconds
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
