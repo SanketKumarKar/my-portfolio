@@ -26,17 +26,29 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     });
 });
 
-// Scroll Animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+// Initialize Animations
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate skill bars
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%'; // Reset to 0
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
   });
-}, { threshold: 0.1 });
 
-document.querySelectorAll('.fade-in').forEach(el => {
-  observer.observe(el);
+  // Scroll Animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
 });
 
 // Project Filtering
@@ -45,21 +57,13 @@ const projectCards = document.querySelectorAll('.project-card');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Remove active class from all buttons
     filterButtons.forEach(btn => btn.classList.remove('active'));
-    // Add active class to clicked button
     button.classList.add('active');
-    
     const filter = button.dataset.filter;
-    
-    // Filter projects
+
     projectCards.forEach(card => {
-      const category = card.dataset.category;
-      if (filter === 'all' || category === filter) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? 
+        'block' : 'none';
     });
   });
 });
@@ -71,28 +75,9 @@ scrollToTopBtn.classList.add('scroll-to-top');
 document.body.appendChild(scrollToTopBtn);
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 500) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
+  scrollToTopBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
 });
 
 scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-// Initialize Animations sanket
-document.addEventListener('DOMContentLoaded', () => {
-  // Animate skill bars
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const width = bar.dataset.percent;
-    bar.style.width = '0';
-    setTimeout(() => {
-      bar.style.width = width;
-    }, 500);
-  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
