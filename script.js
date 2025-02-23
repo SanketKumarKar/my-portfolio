@@ -39,11 +39,13 @@ filterButtons.forEach(button => {
   });
 });
 
-// Radial Chart Animation
-const radialCharts = document.querySelectorAll('.radial-chart');
-radialCharts.forEach(chart => {
-  const percent = chart.getAttribute('data-percent');
-  chart.style.setProperty('--percent', `${percent}%`);
+// Progress Bar Animation
+const progressBars = document.querySelectorAll('.progress-bar');
+
+progressBars.forEach(bar => {
+  const percent = bar.getAttribute('data-percent');
+  bar.style.width = `${percent}%`;
+  bar.style.backgroundColor = `hsl(${percent}, 100%, 50%)`; // Dynamic color based on percentage
 });
 
 // Smooth Scrolling for Anchor Links
@@ -84,4 +86,30 @@ window.addEventListener('scroll', () => {
 });
 
 // Fade-in Animation on Scroll
-const fadeElements = document.querySelector
+const fadeElements = document.querySelectorAll('.fade-in-scroll');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+    } else {
+      entry.target.classList.remove('fade-in');
+    }
+  });
+}, { threshold: 0.5 });
+
+fadeElements.forEach(element => {
+  observer.observe(element);
+});
+
+// Animated Background
+const heroBackground = document.querySelector('.hero-background');
+const colors = ['#00ffcc', '#ff00cc', '#cc00ff', '#00ccff'];
+let currentIndex = 0;
+
+function changeBackgroundColor() {
+  heroBackground.style.background = `linear-gradient(45deg, ${colors[currentIndex]}, ${colors[(currentIndex + 1) % colors.length]})`;
+  currentIndex = (currentIndex + 1) % colors.length;
+}
+
+setInterval(changeBackgroundColor, 5000); // Change color every 5 seconds
