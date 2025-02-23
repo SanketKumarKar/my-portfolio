@@ -85,7 +85,7 @@ scrollToTopBtn.addEventListener('click', () => {
   });
 });
 
-// Initialize Animations
+// Initialize Animations sanket
 document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
