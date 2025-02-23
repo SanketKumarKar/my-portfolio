@@ -3,18 +3,40 @@ emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
 
+// Smooth Scroll Navigation
+document.querySelectorAll('.nav-btn').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const section = document.getElementById(button.dataset.section);
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 // Contact Form Submission
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  emailjs.sendForm('service_el6zmci', 'template_wv6avkn', this)
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  emailjs.sendForm('service_el6zmci', 'template_wv6avkn', e.target)
     .then(() => {
       alert('Message sent successfully!');
-      document.getElementById('contact-form').reset();
-    })
-    .catch((error) => {
-      console.error('Failed to send message:', error);
+      e.target.reset();
+    }, (error) => {
       alert('Failed to send message. Please try again.');
+      console.error('EmailJS Error:', error);
     });
+});
+
+// Scroll Animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
 });
 
 // Project Filtering
@@ -23,32 +45,54 @@ const projectCards = document.querySelectorAll('.project-card');
 
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
+    // Remove active class from all buttons
     filterButtons.forEach(btn => btn.classList.remove('active'));
+    // Add active class to clicked button
     button.classList.add('active');
-    const filter = button.getAttribute('data-filter');
-
+    
+    const filter = button.dataset.filter;
+    
+    // Filter projects
     projectCards.forEach(card => {
-      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+      const category = card.dataset.category;
+      if (filter === 'all' || category === filter) {
         card.style.display = 'block';
-        card.classList.add('fade-in');
       } else {
         card.style.display = 'none';
-        card.classList.remove('fade-in');
       }
     });
   });
 });
 
-// Progress Bar Animation
-const progressBars = document.querySelectorAll('.progress-bar');
+// Scroll to Top Button
+const scrollToTopBtn = document.createElement('button');
+scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+scrollToTopBtn.classList.add('scroll-to-top');
+document.body.appendChild(scrollToTopBtn);
 
-progressBars.forEach(bar => {
-  const percent = bar.getAttribute('data-percent');
-  const track = bar.querySelector('.progress-track');
-  track.style.width = `${percent}%`;
-  track.style.backgroundColor = `hsl(${percent}, 100%, 50%)`; // Dynamic color based on percentage
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
 });
 
-// Smooth Scrolling for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Initialize Animations
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate skill bars
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    const width = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => {
+      bar.style.width = width;
+    }, 500);
+  });
+});
