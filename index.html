@@ -5,49 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanket Kumar Kar - AI Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js" defer></script>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <button class="nav-btn" data-section="hero">Home</button>
+    <button class="nav-btn" data-section="about">About</button>
+    <button class="nav-btn" data-section="skills">Skills</button>
+    <button class="nav-btn" data-section="contact">Contact</button>
+  </nav>
+
   <!-- Hero Section -->
-  <section id="hero">
+  <section id="hero" class="section">
     <div class="hero-content">
       <h1 class="neon-text">Sanket Kumar Kar</h1>
-      <h2 class="neon-text">AI Researcher & Machine Learning Engineer</h2>
-      <p class="neon-text">Expert in Natural Language Processing, Computer Vision, and Predictive Modeling</p>
-      <a href="FinalResume.pdf" download class="download-btn">Download Resume <i class="fas fa-download"></i></a>
+      <h2 class="neon-subtext">AI/ML Enthusiast & Developer</h2>
+      <div class="hero-btns">
+        <a href="#projects" class="btn neon-btn">View Projects <i class="fas fa-arrow-down"></i></a>
+        <a href="FinalResume.pdf" download class="btn neon-btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
     </div>
-    <div class="hero-background"></div>
+    <div class="hero-particles"></div>
   </section>
 
   <!-- About Section -->
-  <section id="about">
-    <div class="about-content">
-      <div class="avatar-container">
-        <img src="avatar.jpeg" alt="Avatar" class="avatar neon-border">
-      </div>
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I specialize in building intelligent systems using cutting-edge AI and ML technologies. With over 5 years of experience, I have worked on projects ranging from autonomous vehicles to advanced recommendation systems.</p>
-        <div class="skills-icons">
-          <span><i class="fab fa-python"></i> Python</span>
-          <span><i class="fas fa-brain"></i> TensorFlow</span>
-          <span><i class="fas fa-project-diagram"></i> PyTorch</span>
-          <span><i class="fas fa-chart-line"></i> R</span>
+  <section id="about" class="section fade-in">
+    <div class="section-content">
+      <h2 class="section-title glow">About Me</h2>
+      <div class="about-grid">
+        <div class="avatar-container">
+          <img src="avatar.jpeg" alt="Avatar" class="avatar glow">
+          <div class="avatar-overlay">
+            <div class="status-dot"></div>
+            <span>Open to Opportunities</span>
+          </div>
         </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>2028 - Present</h3>
-            <p>Senior AI Researcher at Tech Innovators</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2024 - 2028</h3>
-            <p>Vellore Institute of Technology</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2019 - 2024</h3>
-            <p>Gurukul The School</p>
+        <div class="about-text">
+          <p class="neon-text">I'm a second-year Computer Science student passionate about Artificial Intelligence and Machine Learning. I enjoy solving real-world problems using data-driven approaches and building intelligent systems.</p>
+          <div class="timeline">
+            <div class="timeline-item fade-in">
+              <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="timeline-content">
+                <h3>2022 - Present</h3>
+                <p>B.Tech in Computer Science</p>
+                <p>Vellore Institute of Technology</p>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <div class="timeline-icon"><i class="fas fa-school"></i></div>
+              <div class="timeline-content">
+                <h3>2018 - 2022</h3>
+                <p>Higher Secondary Education</p>
+                <p>Gurukul The School, Kolkata</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -55,123 +70,164 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="nlp">Natural Language Processing</button>
-      <button class="filter-btn" data-filter="cv">Computer Vision</button>
-      <button class="filter-btn" data-filter="pm">Predictive Modeling</button>
-    </div>
-    <div class="project-grid">
-      <div class="project-card" data-category="nlp">
-        <img src="project1.jpeg" alt="Project 1" class="project-image">
-        <h3>Sentiment Analysis Tool</h3>
-        <p>A tool to analyze sentiment in social media posts using TensorFlow and NLP techniques.</p>
-        <div class="technologies">
-          <span>Python</span>
-          <span>TensorFlow</span>
-          <span>NLTK</span>
+  <section id="projects" class="section fade-in">
+    <div class="section-content">
+      <h2 class="section-title glow">Projects</h2>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card fade-in" data-category="nlp">
+          <div class="project-header">
+            <i class="fab fa-python project-icon"></i>
+            <h3>Sentiment Analysis Engine</h3>
+          </div>
+          <img src="project1.jpeg" alt="NLP Project" class="project-image">
+          <div class="project-content">
+            <p>Built a sentiment analysis tool using Python and TensorFlow to analyze customer reviews.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">NLTK</span>
+            </div>
+            <a href="#" class="project-link">View Details <i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="project-card" data-category="cv">
-        <img src="project2.jpeg" alt="Project 2" class="project-image">
-        <h3>Facial Recognition System</h3>
-        <p>A real-time facial recognition system built with OpenCV and PyTorch.</p>
-        <div class="technologies">
-          <span>Python</span>
-          <span>PyTorch</span>
-          <span>OpenCV</span>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-in" data-category="cv">
+          <div class="project-header">
+            <i class="fas fa-eye project-icon"></i>
+            <h3>Facial Recognition System</h3>
+          </div>
+          <img src="project2.jpeg" alt="CV Project" class="project-image">
+          <div class="project-content">
+            <p>Developed a facial recognition system using OpenCV and Python for attendance tracking.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Dlib</span>
+            </div>
+            <a href="#" class="project-link">View Details <i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="project-card" data-category="pm">
-        <img src="project3.jpeg" alt="Project 3" class="project-image">
-        <h3>Sales Prediction Model</h3>
-        <p>A predictive model for forecasting sales using time-series data and Scikit-learn.</p>
-        <div class="technologies">
-          <span>Python</span>
-          <span>Scikit-learn</span>
-          <span>Pandas</span>
+
+        <!-- Project 3 -->
+        <div class="project-card fade-in" data-category="web">
+          <div class="project-header">
+            <i class="fas fa-globe project-icon"></i>
+            <h3>Personal Portfolio Website</h3>
+          </div>
+          <img src="project3.jpeg" alt="Web Project" class="project-image">
+          <div class="project-content">
+            <p>Designed and developed a responsive portfolio website to showcase my projects and skills.</p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <a href="#" class="project-link">View Details <i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Programming Languages</h3>
-        <div class="progress-bar" data-percent="90">
-          <div class="progress-track"></div>
-          <span>Python</span>
+  <section id="skills" class="section fade-in">
+    <div class="section-content">
+      <h2 class="section-title glow">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%">
+              <span>Python</span>
+              <span>90%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%">
+              <span>Java</span>
+              <span>80%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%">
+              <span>JavaScript</span>
+              <span>70%</span>
+            </div>
+          </div>
         </div>
-        <div class="progress-bar" data-percent="80">
-          <div class="progress-track"></div>
-          <span>R</span>
-        </div>
-        <div class="progress-bar" data-percent="70">
-          <div class="progress-track"></div>
-          <span>Java</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>AI Frameworks</h3>
-        <div class="progress-bar" data-percent="85">
-          <div class="progress-track"></div>
-          <span>TensorFlow</span>
-        </div>
-        <div class="progress-bar" data-percent="75">
-          <div class="progress-track"></div>
-          <span>PyTorch</span>
-        </div>
-        <div class="progress-bar" data-percent="80">
-          <div class="progress-track"></div>
-          <span>Keras</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Data Analysis Tools</h3>
-        <div class="progress-bar" data-percent="95">
-          <div class="progress-track"></div>
-          <span>Pandas</span>
-        </div>
-        <div class="progress-bar" data-percent="90">
-          <div class="progress-track"></div>
-          <span>NumPy</span>
-        </div>
-        <div class="progress-bar" data-percent="85">
-          <div class="progress-track"></div>
-          <span>Matplotlib</span>
+
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-brain"></i> AI/ML Frameworks</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%">
+              <span>TensorFlow</span>
+              <span>85%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%">
+              <span>PyTorch</span>
+              <span>75%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%">
+              <span>Scikit-learn</span>
+              <span>70%</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <div class="form-group">
-        <input type="text" name="user_name" placeholder="Name" required>
+  <section id="contact" class="section fade-in">
+    <div class="section-content">
+      <h2 class="section-title glow">Contact Me</h2>
+      <div class="contact-wrapper">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" name="user_name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" name="user_email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-comment input-icon"></i>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+            <div class="submit-overlay"></div>
+          </button>
+        </form>
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Location</h4>
+            <p>Kolkata, India</p>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/sanketkumarkar" class="social-icon">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/sanketkumarkar" class="social-icon">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:sanketkumarkar@gmail.com" class="social-icon">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <input type="email" name="user_email" placeholder="Email" required>
-      </div>
-      <div class="form-group">
-        <textarea name="message" placeholder="Message" required></textarea>
-      </div>
-      <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-    </form>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/sanketkumarkar" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/sanketkumarkar" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:sanketkumarkar@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="script.js"></script>
 </body>
 </html>
