@@ -89,7 +89,7 @@ scrollToTopBtn.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
-    const width = bar.style.width;
+    const width = bar.dataset.percent;
     bar.style.width = '0';
     setTimeout(() => {
       bar.style.width = width;
