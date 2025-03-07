@@ -68,12 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 1200,
   });
 
-  // Add animation for arrows pointing towards the name title
-  const arrows = document.querySelectorAll('.arrow-animation');
-  arrows.forEach(arrow => {
-    arrow.style.animation = 'arrow-bounce 2s infinite';
-  });
-
   // Add typing animation for the name title
   const nameTitle = document.querySelector('.typing-animation');
   const nameText = nameTitle.textContent;
