@@ -263,6 +263,7 @@ body {
     width: 0;
     transition: var(--transition);
     position: relative;
+    animation: skill-animation 2s ease-in-out forwards;
 }
 
 .skill-progress span {
@@ -270,6 +271,11 @@ body {
     right: 0;
     top: -25px;
     color: var(--neon-blue);
+}
+
+@keyframes skill-animation {
+    0% { width: 0; }
+    100% { width: var(--percent); }
 }
 
 /* Contact Section */
