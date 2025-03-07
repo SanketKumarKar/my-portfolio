@@ -362,7 +362,7 @@ textarea {
 }
 
 .info-card p {
-    color: var(--text-primary);
+    color: var (--text-primary);
 }
 
 .social-links {
