@@ -5,6 +5,7 @@
     --section-bg: rgba(26, 26, 26, 0.95);
     --text-primary: #ffffff;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --techie-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 * {
@@ -19,10 +20,17 @@ html {
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: var(--dark-bg);
+    background: var(--techie-gradient);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 /* Navigation */
