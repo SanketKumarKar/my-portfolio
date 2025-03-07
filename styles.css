@@ -6,6 +6,11 @@
     --text-primary: #ffffff;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --techie-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --light-bg: #f0f0f0;
+    --light-section-bg: #ffffff;
+    --light-text-primary: #000000;
+    --light-neon-blue: #007acc;
+    --light-neon-purple: #8a2be2;
 }
 
 * {
@@ -24,6 +29,11 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+body.light-mode {
+    background: var(--light-bg);
+    color: var(--light-text-primary);
 }
 
 #particles-js {
@@ -54,10 +64,20 @@ body {
     backdrop-filter: blur(5px);
 }
 
+body.light-mode .nav-btn {
+    border: 2px solid var(--light-neon-blue);
+    color: var(--light-neon-blue);
+}
+
 .nav-btn:hover {
     background: var(--neon-blue);
     color: var(--dark-bg);
     transform: translateY(-2px);
+}
+
+body.light-mode .nav-btn:hover {
+    background: var(--light-neon-blue);
+    color: var(--light-bg);
 }
 
 /* Hero Section */
@@ -81,11 +101,21 @@ body {
     margin-bottom: 1rem;
 }
 
+body.light-mode .neon-text {
+    color: var(--light-neon-blue);
+    text-shadow: 0 0 8px rgba(0, 122, 204, 0.3);
+}
+
 .neon-subtext {
     font-size: 2rem;
     color: var(--neon-purple);
     text-shadow: 0 0 5px rgba(188, 19, 254, 0.2);
     margin-bottom: 2rem;
+}
+
+body.light-mode .neon-subtext {
+    color: var(--light-neon-purple);
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.2);
 }
 
 .hero-btns {
@@ -106,16 +136,30 @@ body {
     gap: 0.5rem;
 }
 
+body.light-mode .btn {
+    border: 2px solid var(--light-neon-blue);
+    color: var(--light-neon-blue);
+}
+
 .btn:hover {
     background: var(--neon-blue);
     color: var(--dark-bg);
     transform: translateY(-3px);
 }
 
+body.light-mode .btn:hover {
+    background: var(--light-neon-blue);
+    color: var(--light-bg);
+}
+
 /* About Section */
 #about {
     padding: 5rem 2rem;
     background: var(--section-bg);
+}
+
+body.light-mode #about {
+    background: var(--light-section-bg);
 }
 
 .about-grid {
@@ -138,6 +182,11 @@ body {
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
 }
 
+body.light-mode .avatar {
+    border: 3px solid var(--light-neon-blue);
+    box-shadow: 0 0 20px rgba(0, 122, 204, 0.1);
+}
+
 .status-indicator {
     position: absolute;
     bottom: -1rem;
@@ -149,6 +198,10 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+body.light-mode .status-indicator {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .status-dot {
@@ -170,6 +223,10 @@ body {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
     transition: var (--transition);
+}
+
+body.light-mode .timeline-item {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .timeline-item:hover {
@@ -197,9 +254,18 @@ body {
     border: 1px solid rgba(0, 243, 255, 0.1);
 }
 
+body.light-mode .project-card {
+    background: var(--light-section-bg);
+    border: 1px solid rgba(0, 122, 204, 0.1);
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 243, 255, 0.1);
+}
+
+body.light-mode .project-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 122, 204, 0.1);
 }
 
 .project-image {
@@ -227,10 +293,19 @@ body {
     font-size: 0.9rem;
 }
 
+body.light-mode .tech-tag {
+    background: var(--light-neon-blue);
+    color: var(--light-bg);
+}
+
 /* Skills Section */
 #skills {
     padding: 5rem 2rem;
     background: var(--section-bg);
+}
+
+body.light-mode #skills {
+    background: var(--light-section-bg);
 }
 
 .skills-container {
@@ -247,6 +322,10 @@ body {
     border-radius: 1rem;
 }
 
+body.light-mode .skill-category {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 .skill-bar {
     width: 100%;
     height: 10px;
@@ -254,6 +333,10 @@ body {
     border-radius: 1rem;
     margin: 1.5rem 0;
     position: relative;
+}
+
+body.light-mode .skill-bar {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .skill-progress {
@@ -266,11 +349,19 @@ body {
     animation: skill-animation 2s ease-in-out forwards;
 }
 
+body.light-mode .skill-progress {
+    background: linear-gradient(90deg, var(--light-neon-blue), var(--light-neon-purple));
+}
+
 .skill-progress span {
     position: absolute;
     right: 0;
     top: -25px;
     color: var(--neon-blue);
+}
+
+body.light-mode .skill-progress span {
+    color: var(--light-neon-blue);
 }
 
 @keyframes skill-animation {
@@ -309,6 +400,10 @@ body {
     color: var(--neon-blue);
 }
 
+body.light-mode .form-group i {
+    color: var(--light-neon-blue);
+}
+
 input, textarea {
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
@@ -319,10 +414,21 @@ input, textarea {
     transition: var(--transition);
 }
 
+body.light-mode input, body.light-mode textarea {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--light-neon-blue);
+    color: var(--light-text-primary);
+}
+
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--neon-purple);
     box-shadow: 0 0 15px rgba(188, 19, 254, 0.2);
+}
+
+body.light-mode input:focus, body.light-mode textarea:focus {
+    border-color: var(--light-neon-purple);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
 }
 
 textarea {
@@ -344,9 +450,18 @@ textarea {
     justify-content: center;
 }
 
+body.light-mode .submit-btn {
+    background: var(--light-neon-blue);
+    color: var(--light-bg);
+}
+
 .submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+}
+
+body.light-mode .submit-btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 122, 204, 0.3);
 }
 
 .contact-info {
@@ -360,6 +475,11 @@ textarea {
     gap: 1.5rem;
 }
 
+body.light-mode .contact-info {
+    background: var(--light-section-bg);
+    border: 1px solid rgba(0, 122, 204, 0.1);
+}
+
 .info-card {
     text-align: center;
 }
@@ -370,13 +490,25 @@ textarea {
     margin-bottom: 0.5rem;
 }
 
+body.light-mode .info-card i {
+    color: var(--light-neon-blue);
+}
+
 .info-card h4 {
     color: var(--neon-blue);
     margin-bottom: 0.5rem;
 }
 
+body.light-mode .info-card h4 {
+    color: var(--light-neon-blue);
+}
+
 .info-card p {
     color: var (--text-primary);
+}
+
+body.light-mode .info-card p {
+    color: var(--light-text-primary);
 }
 
 .social-links {
@@ -390,9 +522,17 @@ textarea {
     transition: var(--transition);
 }
 
+body.light-mode .social-links a {
+    color: var(--light-neon-blue);
+}
+
 .social-links a:hover {
     color: var(--neon-purple);
     transform: translateY(-3px);
+}
+
+body.light-mode .social-links a:hover {
+    color: var(--light-neon-purple);
 }
 
 /* Footer */
@@ -403,9 +543,18 @@ footer {
     border-top: 1px solid rgba(0, 243, 255, 0.1);
 }
 
+body.light-mode footer {
+    background: var(--light-bg);
+    border-top: 1px solid rgba(0, 122, 204, 0.1);
+}
+
 footer p {
     color: var(--neon-blue);
     font-size: 0.9rem;
+}
+
+body.light-mode footer p {
+    color: var(--light-neon-blue);
 }
 
 /* Animations */
@@ -419,6 +568,12 @@ footer p {
     0% { box-shadow: 0 0 5px var(--neon-blue); }
     50% { box-shadow: 0 0 20px var(--neon-blue); }
     100% { box-shadow: 0 0 5px var(--neon-blue); }
+}
+
+body.light-mode @keyframes glow {
+    0% { box-shadow: 0 0 5px var(--light-neon-blue); }
+    50% { box-shadow: 0 0 20px var(--light-neon-blue); }
+    100% { box-shadow: 0 0 5px var(--light-neon-blue); }
 }
 
 .neon-btn {
@@ -461,6 +616,12 @@ footer p {
     animation: congrats-animation 1s ease-in-out forwards;
 }
 
+body.light-mode .congrats-message {
+    background: var(--light-neon-blue);
+    color: var(--light-bg);
+    box-shadow: 0 0 20px rgba(0, 122, 204, 0.5);
+}
+
 @keyframes congrats-animation {
     0% { opacity: 0; transform: translate(-50%, -60%); }
     100% { opacity: 1; transform: translate(-50%, -50%); }
@@ -494,6 +655,10 @@ body::before {
     animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
 }
 
+body.light-mode .typing-animation {
+    border-right: 0.15em solid var(--light-neon-blue);
+}
+
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
@@ -502,6 +667,11 @@ body::before {
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: var(--neon-blue); }
+}
+
+body.light-mode @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--light-neon-blue); }
 }
 
 /* Responsive Design */

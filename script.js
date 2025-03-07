@@ -121,3 +121,9 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Toggle Theme
+const toggleThemeBtn = document.getElementById('toggle-theme');
+toggleThemeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+});
