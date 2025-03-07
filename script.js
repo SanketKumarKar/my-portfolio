@@ -67,6 +67,34 @@ document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
     duration: 1200,
   });
+
+  // Add animation for arrows pointing towards the name title
+  const arrows = document.querySelectorAll('.arrow-animation');
+  arrows.forEach(arrow => {
+    arrow.style.animation = 'arrow-bounce 2s infinite';
+  });
+
+  // Add typing animation for the name title
+  const nameTitle = document.querySelector('.typing-animation');
+  const nameText = nameTitle.textContent;
+  let index = 0;
+
+  function type() {
+    if (index < nameText.length) {
+      nameTitle.textContent += nameText.charAt(index);
+      index++;
+      setTimeout(type, 150);
+    } else {
+      setTimeout(() => {
+        nameTitle.textContent = '';
+        index = 0;
+        type();
+      }, 3000);
+    }
+  }
+
+  nameTitle.textContent = '';
+  type();
 });
 
 // Project Filtering
