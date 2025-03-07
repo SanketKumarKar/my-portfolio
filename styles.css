@@ -20,7 +20,7 @@ html {
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: var(--techie-gradient);
+    background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
