@@ -20,6 +20,14 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     .then(() => {
       alert('Message sent successfully!');
       e.target.reset();
+      // Add congratulation message animation
+      const congratsMessage = document.createElement('div');
+      congratsMessage.classList.add('congrats-message');
+      congratsMessage.innerText = 'Congratulations! Your message has been sent.';
+      document.body.appendChild(congratsMessage);
+      setTimeout(() => {
+        congratsMessage.remove();
+      }, 5000);
     }, (error) => {
       alert('Failed to send message. Please try again.');
       console.error('EmailJS Error:', error);
