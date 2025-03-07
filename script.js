@@ -1,4 +1,4 @@
-// Initialize EmailJS
+ // Initialize EmailJS
 emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
+  });
+
+  // Initialize particles.js
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('particles.js loaded - callback');
   });
 });
 
