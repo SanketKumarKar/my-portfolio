@@ -134,7 +134,7 @@ body {
 .avatar {
     width: 100%;
     border-radius: 1rem;
-    border: 3px solid var(--neon-blue);
+    border: 3px solid var (--neon-blue);
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
 }
 
