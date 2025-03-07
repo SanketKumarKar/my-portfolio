@@ -169,7 +169,7 @@ body {
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
-    transition: var(--transition);
+    transition: var (--transition);
 }
 
 .timeline-item:hover {
@@ -485,18 +485,6 @@ body::before {
     animation: tv-static 2s linear infinite;
 }
 
-/* Animated Arrows */
-.arrow-animation {
-    font-size: 2rem;
-    color: var(--neon-blue);
-    animation: arrow-bounce 2s infinite;
-}
-
-@keyframes arrow-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
 /* Typing Animation */
 .typing-animation {
     display: inline-block;
@@ -552,12 +540,13 @@ body::before {
     }
 
     .nav-container {
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     .nav-btn {
-        margin: 5px 0;
+        margin: 5px;
     }
 }
 
