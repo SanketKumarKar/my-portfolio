@@ -572,4 +572,9 @@ body::before {
     .timeline-icon {
         margin-bottom: 10px;
     }
+
+    .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
 }
