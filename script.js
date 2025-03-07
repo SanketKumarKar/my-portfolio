@@ -54,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   particlesJS.load('particles-js', 'particles.json', function() {
     console.log('particles.js loaded - callback');
   });
+
+  // Initialize AOS
+  AOS.init({
+    duration: 1200,
+  });
 });
 
 // Project Filtering

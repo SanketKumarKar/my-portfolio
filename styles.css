@@ -134,7 +134,7 @@ body {
 .avatar {
     width: 100%;
     border-radius: 1rem;
-    border: 3px solid var(--neon-blue);
+    border: 3px solid var (--neon-blue);
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
 }
 
@@ -421,6 +421,24 @@ footer p {
 
 .glow {
     animation: glow 2s ease-in-out infinite;
+}
+
+/* AOS Animations */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(20px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
 }
 
 /* Responsive Design */
