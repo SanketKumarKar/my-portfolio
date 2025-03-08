@@ -233,14 +233,14 @@ body {
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
     transition: none;
-    border: 2px solid black;
+    border: 2px solid var(--neon-blue);
     background-color: transparent;
-    color: black;
+    color: var(--neon-blue);
 }
 
 .view-source-btn:active {
     background-color: transparent;
-    color: black;
+    color: var(--neon-blue);
 }
 
 /* Skills Section */
