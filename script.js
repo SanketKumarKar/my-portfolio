@@ -133,7 +133,7 @@ toggleThemeBtn.addEventListener('click', () => {
 // View Source Code Button Functionality
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
-    window.open('https://github.com/SanketKumarKar/my-portfolio', '_blank');
+    window.open('https://github.com/SanketKumarKar/my-portfolio', '_blank', 'width=800,height=600');
   });
 });
 
@@ -164,8 +164,9 @@ const updateTheme = () => {
     document.documentElement.style.setProperty('--section-bg', '#ffffff');
     document.documentElement.style.setProperty('--text-primary', '#000000');
     document.querySelectorAll('.btn').forEach(button => {
-      button.style.backgroundColor = 'black';
-      button.style.color = 'white';
+      button.style.backgroundColor = 'transparent';
+      button.style.color = 'black';
+      button.style.border = '2px solid black';
     });
   } else {
     document.documentElement.style.setProperty('--neon-blue', '#00f3ff');
@@ -199,13 +200,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // Make the "View Source Code" button smaller and slow down its animation
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.style.padding = '0.3rem 0.8rem';
-  button.style.transition = 'all 0.8s ease-in-out';
+  button.style.transition = 'none';
 });
 
 // Change the color of the "View Source Code" button to blue and purple when clicked
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
-    button.style.backgroundColor = 'blue';
-    button.style.color = 'purple';
+    button.style.backgroundColor = 'transparent';
+    button.style.color = 'black';
+  });
+});
+
+// Add event listeners to LinkedIn, GitHub, and email links to open them in a popup window
+document.querySelectorAll('.social-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open(link.href, '_blank', 'width=800,height=600');
   });
 });

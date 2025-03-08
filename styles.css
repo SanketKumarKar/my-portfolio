@@ -141,7 +141,7 @@ body.light-mode .neon-subtext {
 
 body.light-mode .btn {
     border: 2px solid var(--light-neon-blue);
-    color: var (--light-neon-blue);
+    color: var(--light-neon-blue);
 }
 
 .btn:hover {
@@ -181,7 +181,7 @@ body.light-mode #about {
 .avatar {
     width: 100%;
     border-radius: 1rem;
-    border: 3px solid var (--neon-blue);
+    border: 3px solid var(--neon-blue);
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
 }
 
@@ -225,7 +225,7 @@ body.light-mode .status-indicator {
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 1rem;
-    transition: var (--transition);
+    transition: var(--transition);
 }
 
 body.light-mode .timeline-item {
@@ -304,12 +304,15 @@ body.light-mode .tech-tag {
 .view-source-btn {
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
-    transition: all 0.8s ease-in-out;
+    transition: none;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
 }
 
 .view-source-btn:active {
-    background-color: blue;
-    color: purple;
+    background-color: transparent;
+    color: black;
 }
 
 /* Skills Section */
@@ -518,7 +521,7 @@ body.light-mode .info-card h4 {
 }
 
 .info-card p {
-    color: var (--text-primary);
+    color: var(--text-primary);
 }
 
 body.light-mode .info-card p {
