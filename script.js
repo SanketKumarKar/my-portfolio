@@ -163,6 +163,10 @@ const updateTheme = () => {
     document.documentElement.style.setProperty('--dark-bg', '#f0f0f0');
     document.documentElement.style.setProperty('--section-bg', '#ffffff');
     document.documentElement.style.setProperty('--text-primary', '#000000');
+    document.querySelectorAll('.btn').forEach(button => {
+      button.style.backgroundColor = 'black';
+      button.style.color = 'white';
+    });
   } else {
     document.documentElement.style.setProperty('--neon-blue', '#00f3ff');
     document.documentElement.style.setProperty('--neon-purple', '#bc13fe');
@@ -186,8 +190,22 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add functionality to update the visit counter as soon as a user visits the site
 document.addEventListener('DOMContentLoaded', () => {
   const visitCounter = document.getElementById('visit-counter');
-  let visits = localStorage.getItem('visits') || 0;
+  let visits = localStorage.getItem('visits') || 226;
   visits++;
   localStorage.setItem('visits', visits);
-  visitCounter.textContent = `Visits: ${visits}`;
+  visitCounter.textContent = `Portfolio Visits: ${visits}`;
+});
+
+// Make the "View Source Code" button smaller and slow down its animation
+document.querySelectorAll('.view-source-btn').forEach(button => {
+  button.style.padding = '0.3rem 0.8rem';
+  button.style.transition = 'all 0.8s ease-in-out';
+});
+
+// Change the color of the "View Source Code" button to blue and purple when clicked
+document.querySelectorAll('.view-source-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    button.style.backgroundColor = 'blue';
+    button.style.color = 'purple';
+  });
 });
