@@ -122,29 +122,12 @@ scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Toggle Theme
-const toggleThemeBtn = document.getElementById('toggle-theme');
-toggleThemeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  updateFonts();
-  updateTheme();
-});
-
 // View Source Code Button Functionality
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
     window.open('https://github.com/SanketKumarKar/my-portfolio', '_blank', 'width=800,height=600');
   });
 });
-
-// Update Fonts for Light Mode
-const updateFonts = () => {
-  if (document.body.classList.contains('light-mode')) {
-    document.body.style.fontFamily = "'Roboto', sans-serif";
-  } else {
-    document.body.style.fontFamily = "'Segoe UI', sans-serif";
-  }
-};
 
 // Add Playful Animations
 const addPlayfulAnimations = () => {
@@ -154,28 +137,6 @@ const addPlayfulAnimations = () => {
 };
 
 document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
-
-// Update Theme for Light Mode
-const updateTheme = () => {
-  if (document.body.classList.contains('light-mode')) {
-    document.documentElement.style.setProperty('--neon-blue', '#007acc');
-    document.documentElement.style.setProperty('--neon-purple', '#8a2be2');
-    document.documentElement.style.setProperty('--dark-bg', '#f0f0f0');
-    document.documentElement.style.setProperty('--section-bg', '#ffffff');
-    document.documentElement.style.setProperty('--text-primary', '#000000');
-    document.querySelectorAll('.btn').forEach(button => {
-      button.style.backgroundColor = 'transparent';
-      button.style.color = 'black';
-      button.style.border = '2px solid black';
-    });
-  } else {
-    document.documentElement.style.setProperty('--neon-blue', '#00f3ff');
-    document.documentElement.style.setProperty('--neon-purple', '#bc13fe');
-    document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
-    document.documentElement.style.setProperty('--section-bg', 'rgba(26, 26, 26, 0.95)');
-    document.documentElement.style.setProperty('--text-primary', '#ffffff');
-  }
-};
 
 // Add moving skills bar animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -216,5 +177,38 @@ document.querySelectorAll('.social-links a').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     window.open(link.href, '_blank', 'width=800,height=600');
+  });
+});
+
+// Add functionality to display moving neon icons of major popular coding languages in the background
+document.addEventListener('DOMContentLoaded', () => {
+  const icons = ['fab fa-python', 'fab fa-java', 'fab fa-js', 'fab fa-cuttlefish', 'fab fa-cuttlefish'];
+  const container = document.createElement('div');
+  container.classList.add('neon-icons-container');
+  document.body.appendChild(container);
+
+  icons.forEach(iconClass => {
+    const icon = document.createElement('i');
+    icon.className = iconClass;
+    container.appendChild(icon);
+  });
+
+  const animateIcons = () => {
+    container.querySelectorAll('i').forEach(icon => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      icon.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+    });
+  };
+
+  setInterval(animateIcons, 3000);
+});
+
+// Assign each moving icon a different neon color
+document.addEventListener('DOMContentLoaded', () => {
+  const colors = ['#00ff00', '#ff00ff', '#00ffff', '#ff0000', '#0000ff'];
+  const icons = document.querySelectorAll('.neon-icons-container i');
+  icons.forEach((icon, index) => {
+    icon.style.color = colors[index % colors.length];
   });
 });
