@@ -212,36 +212,3 @@ document.addEventListener('DOMContentLoaded', () => {
     icon.style.color = colors[index % colors.length];
   });
 });
-
-// Add functionality to display another background layer filled with binary digits
-document.addEventListener('DOMContentLoaded', () => {
-  const binaryContainer = document.createElement('div');
-  binaryContainer.classList.add('binary-background');
-  document.getElementById('hero').appendChild(binaryContainer);
-
-  const createBinaryRow = (direction) => {
-    const row = document.createElement('div');
-    row.classList.add('binary-row');
-    row.style.animationDirection = direction;
-    for (let i = 0; i < 100; i++) {
-      const digit = document.createElement('span');
-      digit.textContent = Math.random() > 0.5 ? '1' : '0';
-      row.appendChild(digit);
-    }
-    return row;
-  };
-
-  const row1 = createBinaryRow('normal');
-  const row2 = createBinaryRow('reverse');
-  binaryContainer.appendChild(row1);
-  binaryContainer.appendChild(row2);
-});
-
-// Add event listener to remove moving neon icons on C icon click
-document.addEventListener('DOMContentLoaded', () => {
-  const cIcon = document.querySelector('.fab.fa-cuttlefish');
-  cIcon.addEventListener('click', () => {
-    const neonIconsContainer = document.querySelector('.neon-icons-container');
-    neonIconsContainer.remove();
-  });
-});
