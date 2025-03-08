@@ -212,3 +212,34 @@ document.addEventListener('DOMContentLoaded', () => {
     icon.style.color = colors[index % colors.length];
   });
 });
+
+// Add JavaScript code to animate the new skill section with progress bars and fill animations
+document.addEventListener('DOMContentLoaded', () => {
+  const skillBars = document.querySelectorAll('.skill-progress');
+  skillBars.forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
+  });
+});
+
+// Update the existing skill section animation code to include new design elements
+document.addEventListener('DOMContentLoaded', () => {
+  const skillBars = document.querySelectorAll('.skill-progress');
+  skillBars.forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
+  });
+});
+
+// Remove the animation from the view button and make it a simple button
+document.querySelectorAll('.view-source-btn').forEach(button => {
+  button.style.transition = 'none';
+  button.style.backgroundColor = 'transparent';
+  button.style.color = 'black';
+});
