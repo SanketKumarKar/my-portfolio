@@ -167,7 +167,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 // Change the color of the "View Source Code" button to blue and purple when clicked
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
-    button.style.backgroundColor = 'transparent';
+    button.style.backgroundColor = 'white';
     button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
   });
 });
