@@ -301,6 +301,11 @@ body.light-mode .tech-tag {
     color: var(--light-bg);
 }
 
+.view-source-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
 /* Skills Section */
 #skills {
     padding: 5rem 2rem;
@@ -557,6 +562,16 @@ footer p {
 }
 
 body.light-mode footer p {
+    color: var(--light-neon-blue);
+}
+
+#visit-counter {
+    font-size: 1rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+body.light-mode #visit-counter {
     color: var(--light-neon-blue);
 }
 
