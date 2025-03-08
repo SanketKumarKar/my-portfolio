@@ -212,3 +212,27 @@ document.addEventListener('DOMContentLoaded', () => {
     icon.style.color = colors[index % colors.length];
   });
 });
+
+// Add functionality to display another background layer filled with binary digits
+document.addEventListener('DOMContentLoaded', () => {
+  const binaryContainer = document.createElement('div');
+  binaryContainer.classList.add('binary-background');
+  document.body.appendChild(binaryContainer);
+
+  const createBinaryRow = (direction) => {
+    const row = document.createElement('div');
+    row.classList.add('binary-row');
+    row.style.animationDirection = direction;
+    for (let i = 0; i < 100; i++) {
+      const digit = document.createElement('span');
+      digit.textContent = Math.random() > 0.5 ? '1' : '0';
+      row.appendChild(digit);
+    }
+    return row;
+  };
+
+  const row1 = createBinaryRow('normal');
+  const row2 = createBinaryRow('reverse');
+  binaryContainer.appendChild(row1);
+  binaryContainer.appendChild(row2);
+});
