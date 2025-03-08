@@ -182,7 +182,7 @@ document.querySelectorAll('.social-links a').forEach(link => {
 
 // Add functionality to display moving neon icons of major popular coding languages in the background
 document.addEventListener('DOMContentLoaded', () => {
-  const icons = ['fab fa-python', 'fab fa-java', 'fab fa-js', 'fab fa-cuttlefish', 'fab fa-cuttlefish'];
+  const icons = ['fab fa-python', 'fab fa-java', 'fab fa-js', 'fab fa-cuttlefish', 'fab fa-cuttlefish', 'fab fa-html5', 'fab fa-css3-alt', 'fab fa-node-js', 'fab fa-react'];
   const container = document.createElement('div');
   container.classList.add('neon-icons-container');
   document.body.appendChild(container);
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Assign each moving icon a different neon color
 document.addEventListener('DOMContentLoaded', () => {
-  const colors = ['#00ff00', '#ff00ff', '#00ffff', '#ff0000', '#0000ff'];
+  const colors = ['#00ff00', '#ff00ff', '#00ffff', '#ff0000', '#0000ff', '#ff9900', '#ff66cc', '#66ff66', '#ffcc00'];
   const icons = document.querySelectorAll('.neon-icons-container i');
   icons.forEach((icon, index) => {
     icon.style.color = colors[index % colors.length];
