@@ -302,8 +302,14 @@ body.light-mode .tech-tag {
 }
 
 .view-source-btn {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
+    transition: all 0.8s ease-in-out;
+}
+
+.view-source-btn:active {
+    background-color: blue;
+    color: purple;
 }
 
 /* Skills Section */
