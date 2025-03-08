@@ -168,7 +168,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
     button.style.backgroundColor = 'transparent';
-    button.style.color = 'black';
+    button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
   });
 });
 
@@ -241,5 +241,5 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.style.transition = 'none';
   button.style.backgroundColor = 'transparent';
-  button.style.color = 'black';
+  button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
 });
