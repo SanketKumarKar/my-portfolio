@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
@@ -662,30 +662,5 @@ body::before {
 }
 
 .binary-row:nth-child(even) {
-    animation-direction: reverse;
-}
-
-/* Pf762 */
-#hero .binary-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* P38f0 */
-body:not(#hero) .neon-icons-container i {
-    opacity: 0.1;
-    transition: opacity 1s ease-in-out;
-}
-
-/* P98ec */
-#hero .binary-row:nth-child(even) {
     animation-direction: reverse;
 }
