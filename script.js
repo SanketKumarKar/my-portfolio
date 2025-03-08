@@ -126,6 +126,8 @@ scrollToTopBtn.addEventListener('click', () => {
 const toggleThemeBtn = document.getElementById('toggle-theme');
 toggleThemeBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
+  updateFonts();
+  updateTheme();
 });
 
 // View Source Code Button Functionality
@@ -144,9 +146,6 @@ const updateFonts = () => {
   }
 };
 
-toggleThemeBtn.addEventListener('click', updateFonts);
-updateFonts();
-
 // Add Playful Animations
 const addPlayfulAnimations = () => {
   document.querySelectorAll('.btn').forEach(button => {
@@ -155,3 +154,40 @@ const addPlayfulAnimations = () => {
 };
 
 document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
+
+// Update Theme for Light Mode
+const updateTheme = () => {
+  if (document.body.classList.contains('light-mode')) {
+    document.documentElement.style.setProperty('--neon-blue', '#007acc');
+    document.documentElement.style.setProperty('--neon-purple', '#8a2be2');
+    document.documentElement.style.setProperty('--dark-bg', '#f0f0f0');
+    document.documentElement.style.setProperty('--section-bg', '#ffffff');
+    document.documentElement.style.setProperty('--text-primary', '#000000');
+  } else {
+    document.documentElement.style.setProperty('--neon-blue', '#00f3ff');
+    document.documentElement.style.setProperty('--neon-purple', '#bc13fe');
+    document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
+    document.documentElement.style.setProperty('--section-bg', 'rgba(26, 26, 26, 0.95)');
+    document.documentElement.style.setProperty('--text-primary', '#ffffff');
+  }
+};
+
+// Add moving skills bar animation
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
+  });
+});
+
+// Add functionality to update the visit counter as soon as a user visits the site
+document.addEventListener('DOMContentLoaded', () => {
+  const visitCounter = document.getElementById('visit-counter');
+  let visits = localStorage.getItem('visits') || 0;
+  visits++;
+  localStorage.setItem('visits', visits);
+  visitCounter.textContent = `Visits: ${visits}`;
+});
