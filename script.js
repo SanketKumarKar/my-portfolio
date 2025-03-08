@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const binaryContainer = document.createElement('div');
   binaryContainer.classList.add('binary-background');
-  document.body.appendChild(binaryContainer);
+  document.getElementById('hero').appendChild(binaryContainer);
 
   const createBinaryRow = (direction) => {
     const row = document.createElement('div');
@@ -235,4 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const row2 = createBinaryRow('reverse');
   binaryContainer.appendChild(row1);
   binaryContainer.appendChild(row2);
+});
+
+// Add event listener to remove moving neon icons on C icon click
+document.addEventListener('DOMContentLoaded', () => {
+  const cIcon = document.querySelector('.fab.fa-cuttlefish');
+  cIcon.addEventListener('click', () => {
+    const neonIconsContainer = document.querySelector('.neon-icons-container');
+    neonIconsContainer.remove();
+  });
 });
