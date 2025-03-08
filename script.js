@@ -127,3 +127,31 @@ const toggleThemeBtn = document.getElementById('toggle-theme');
 toggleThemeBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
 });
+
+// View Source Code Button Functionality
+document.querySelectorAll('.view-source-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    window.open('https://github.com/SanketKumarKar/my-portfolio', '_blank');
+  });
+});
+
+// Update Fonts for Light Mode
+const updateFonts = () => {
+  if (document.body.classList.contains('light-mode')) {
+    document.body.style.fontFamily = "'Roboto', sans-serif";
+  } else {
+    document.body.style.fontFamily = "'Segoe UI', sans-serif";
+  }
+};
+
+toggleThemeBtn.addEventListener('click', updateFonts);
+updateFonts();
+
+// Add Playful Animations
+const addPlayfulAnimations = () => {
+  document.querySelectorAll('.btn').forEach(button => {
+    button.classList.add('playful-animation');
+  });
+};
+
+document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
