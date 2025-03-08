@@ -11,6 +11,8 @@
     --light-text-primary: #000000;
     --light-neon-blue: #007acc;
     --light-neon-purple: #8a2be2;
+    --immersive-font: 'Roboto', sans-serif;
+    --formal-font: 'Georgia', serif;
 }
 
 * {
@@ -34,6 +36,7 @@ body {
 body.light-mode {
     background: var(--light-bg);
     color: var(--light-text-primary);
+    font-family: var(--immersive-font);
 }
 
 #particles-js {
@@ -674,6 +677,17 @@ body.light-mode @keyframes blink-caret {
     50% { border-color: var(--light-neon-blue); }
 }
 
+/* Playful Animations */
+.playful-animation {
+    animation: playful 1s ease-in-out infinite;
+}
+
+@keyframes playful {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -746,5 +760,9 @@ body.light-mode @keyframes blink-caret {
     .nav-btn {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
+    }
+
+    .timeline-content {
+        text-align: center;
     }
 }
