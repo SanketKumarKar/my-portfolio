@@ -209,3 +209,15 @@ particlesJS.load('particles-js', 'particles.json', function() {
     particle.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
   });
 });
+
+// Add event listener to "View Projects" button to ensure it scrolls to the projects section
+document.querySelector('.btn.nav-btn[href="#projects"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Add event listener to "Download CV" button to ensure it downloads the CV immediately
+document.querySelector('.btn.nav-btn[href="FinalResume.pdf"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.location.href = 'FinalResume.pdf';
+});
