@@ -349,3 +349,20 @@ document.addEventListener('DOMContentLoaded', () => {
     retina_detect: true
   });
 });
+
+// Add JavaScript code to implement the black-grey color layer in the `black-grey-layer` element
+document.addEventListener('DOMContentLoaded', () => {
+  const blackGreyLayer = document.querySelector('.black-grey-layer');
+  if (blackGreyLayer) {
+    blackGreyLayer.style.background = 'linear-gradient(to bottom, black, grey)';
+    blackGreyLayer.style.opacity = '0.5';
+  }
+});
+
+// Add JavaScript code to slow down the animation of the static/snow effect in the `dark-static` element
+document.addEventListener('DOMContentLoaded', () => {
+  const darkStatic = document.querySelector('.dark-static');
+  if (darkStatic) {
+    darkStatic.style.animationDuration = '10s';
+  }
+});
