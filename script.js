@@ -180,66 +180,27 @@ document.querySelectorAll('.social-links a').forEach(link => {
   });
 });
 
-// Add functionality to display moving neon icons of major popular coding languages in the background
+// Remove the moving icon animations from the home page
 document.addEventListener('DOMContentLoaded', () => {
-  const icons = ['fab fa-python', 'fab fa-java', 'fab fa-js', 'fab fa-html5', 'fab fa-css3-alt', 'fab fa-node-js', 'fab fa-react'];
-  const container = document.createElement('div');
-  container.classList.add('neon-icons-container');
-  document.body.appendChild(container);
-
-  icons.forEach(iconClass => {
-    const icon = document.createElement('i');
-    icon.className = iconClass;
-    container.appendChild(icon);
-  });
-
-  const animateIcons = () => {
-    container.querySelectorAll('i').forEach(icon => {
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
-      icon.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
-    });
-  };
-
-  setInterval(animateIcons, 3000);
+  const movingIconsContainer = document.querySelector('.neon-icons-container');
+  if (movingIconsContainer) {
+    movingIconsContainer.remove();
+  }
 });
 
-// Assign each moving icon a different neon color
-document.addEventListener('DOMContentLoaded', () => {
-  const colors = ['#00ff00', '#ff00ff', '#00ffff', '#ff0000', '#0000ff', '#ff9900', '#ff66cc', '#66ff66', '#ffcc00'];
-  const icons = document.querySelectorAll('.neon-icons-container i');
-  icons.forEach((icon, index) => {
-    icon.style.color = colors[index % colors.length];
-  });
-});
-
-// Add JavaScript code to animate the new skill section with progress bars and fill animations
-document.addEventListener('DOMContentLoaded', () => {
-  const skillBars = document.querySelectorAll('.skill-progress');
-  skillBars.forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 500);
-  });
-});
-
-// Update the existing skill section animation code to include new design elements
-document.addEventListener('DOMContentLoaded', () => {
-  const skillBars = document.querySelectorAll('.skill-progress');
-  skillBars.forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 500);
-  });
-});
-
-// Remove the animation from the view button and make it a simple button
+// Remove the zoom-in and zoom-out animation from the "view source code" button
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.style.transition = 'none';
-  button.style.backgroundColor = 'transparent';
-  button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
+  button.style.transform = 'none';
+});
+
+// Update the skill bar animation to partially fill the bars
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
+  });
 });
