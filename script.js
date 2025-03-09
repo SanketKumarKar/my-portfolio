@@ -204,3 +204,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   });
 });
+
+// Add JavaScript code to apply the static/snow effect to the `static-background` div
+document.addEventListener('DOMContentLoaded', () => {
+  const staticBackground = document.getElementById('static-background');
+  if (staticBackground) {
+    const canvas = document.createElement('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    staticBackground.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    function drawStatic() {
+      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      for (let i = 0; i < imageData.data.length; i += 4) {
+        const value = Math.random() * 255;
+        imageData.data[i] = value;
+        imageData.data[i + 1] = value;
+        imageData.data[i + 2] = value;
+        imageData.data[i + 3] = 255;
+      }
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    function animateStatic() {
+      drawStatic();
+      requestAnimationFrame(animateStatic);
+    }
+
+    animateStatic();
+  }
+});
