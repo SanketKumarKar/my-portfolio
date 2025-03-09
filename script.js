@@ -350,12 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Add JavaScript code to implement the black-grey color layer in the `black-grey-layer` element
+// Add JavaScript code to implement the solid black color layer in the `black-layer` element
 document.addEventListener('DOMContentLoaded', () => {
-  const blackGreyLayer = document.querySelector('.black-grey-layer');
-  if (blackGreyLayer) {
-    blackGreyLayer.style.background = 'linear-gradient(to bottom, black, grey)';
-    blackGreyLayer.style.opacity = '0.5';
+  const blackLayer = document.querySelector('.black-layer');
+  if (blackLayer) {
+    blackLayer.style.background = 'black';
+    blackLayer.style.opacity = '0.7';
   }
 });
 
