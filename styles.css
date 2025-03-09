@@ -638,3 +638,14 @@ body::before {
     color: rgba(0, 243, 255, 0.3);
     transition: transform 3s ease-in-out;
 }
+
+/* Dark Static Effect */
+.dark-static {
+    background-color: black;
+    animation: dark-static-animation 5s linear infinite;
+}
+
+@keyframes dark-static-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
