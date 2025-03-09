@@ -199,3 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
   });
 });
+
+// Initialize particles.js
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.json loaded...');
+});
