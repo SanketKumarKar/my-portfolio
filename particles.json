@@ -106,5 +106,17 @@
       }
     }
   },
-  "retina_detect": true
+  "retina_detect": true,
+  "background": {
+    "color": "#000000",
+    "image": "",
+    "position": "50% 50%",
+    "repeat": "no-repeat",
+    "size": "cover"
+  },
+  "glow": {
+    "enable": true,
+    "color": "#ffffff",
+    "intensity": 0.5
+  }
 }

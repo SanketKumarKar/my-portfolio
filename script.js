@@ -203,4 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize particles.js
 particlesJS.load('particles-js', 'particles.json', function() {
   console.log('particles.json loaded...');
+  // Add glow effect to particles
+  const particles = document.querySelectorAll('.particles-js-canvas-el');
+  particles.forEach(particle => {
+    particle.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+  });
 });
