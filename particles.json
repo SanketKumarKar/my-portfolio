@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": ["#39ff14", "#ff073a", "#ff77ff", "#00f3ff", "#bc13fe"] // Neon glow colors
+      "value": ["#00f3ff", "#bc13fe"] // Neon blue and purple gradient
     },
     "shape": {
       "type": "circle",
