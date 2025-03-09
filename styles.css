@@ -254,6 +254,10 @@ body {
     color: var(--neon-blue);
 }
 
+.view-source-btn:hover {
+    color: var(--dark-bg);
+}
+
 /* Skills Section */
 #skills {
     padding: 5rem 2rem;
