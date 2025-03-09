@@ -221,3 +221,24 @@ document.querySelector('.btn.nav-btn[href="FinalResume.pdf"]').addEventListener(
   e.preventDefault();
   window.location.href = 'FinalResume.pdf';
 });
+
+// Animate skill bars in the technical skills section
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.skill-progress').forEach(bar => {
+    const percent = bar.getAttribute('data-percent');
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.width = percent + '%';
+    }, 500);
+  });
+});
+
+// Change skill bars color to pink purple gradient
+document.querySelectorAll('.skill-progress').forEach(bar => {
+  bar.style.background = 'linear-gradient(90deg, #ff00ff, #800080)';
+});
+
+// Resize skill bars to fit properly within their containers
+document.querySelectorAll('.skill-bar').forEach(bar => {
+  bar.style.width = '100%';
+});
