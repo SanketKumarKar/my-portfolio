@@ -94,7 +94,7 @@ body {
 .neon-text {
     font-size: 4rem;
     color: var(--neon-cyan);
-    text-shadow: 0 0 10px var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan); /* Reduced glow from 10px to 5px */
     margin-bottom: 1rem;
     font-family: 'Pacifico', cursive;
     letter-spacing: 2px;
