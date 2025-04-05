@@ -148,11 +148,11 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
   });
 });
 
-// Remove any existing event listeners that might block the download
-document.querySelector('a[download]').addEventListener('click', (e) => {
-    // Let the browser handle the download naturally
-    console.log("Downloading CV...");
-});
+// // Remove any existing event listeners that might block the download
+// document.querySelector('a[download]').addEventListener('click', (e) => {
+//     // Let the browser handle the download naturally
+//     console.log("Downloading CV...");
+// });
 
 // Social links open in popup
 document.querySelectorAll('.social-links a').forEach(link => {
@@ -175,4 +175,14 @@ document.getElementById('view-projects-btn').addEventListener('click', (e) => {
 document.getElementById('download-cv-btn').addEventListener('click', (e) => {
     // Let the default download behavior happen
     console.log('Downloading CV...');
+});
+
+document.querySelector('a[download]').addEventListener('click', (e) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = 'FinalResume.pdf';
+    link.download = 'Sanket_Kumar_Kar_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 });
