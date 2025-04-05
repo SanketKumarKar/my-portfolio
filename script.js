@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%'; // Reset to 0
+    bar.style.transform = 'translateX(-100%)'; // P54fa
     setTimeout(() => {
-      bar.style.width = percent + '%';
+      bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
   });
 
@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
+    bar.style.transform = 'translateX(-100%)'; // P54fa
     setTimeout(() => {
-      bar.style.width = percent + '%';
+      bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
   });
 });
@@ -193,9 +193,9 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
+    bar.style.transform = 'translateX(-100%)'; // P54fa
     setTimeout(() => {
-      bar.style.width = percent + '%';
+      bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
   });
 });
@@ -226,9 +226,9 @@ document.querySelector('.btn.nav-btn[href="FinalResume.pdf"]').addEventListener(
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
+    bar.style.transform = 'translateX(-100%)'; // P54fa
     setTimeout(() => {
-      bar.style.width = percent + '%';
+      bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
   });
 });
