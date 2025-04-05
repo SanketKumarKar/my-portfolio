@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // P54fa
+    bar.style.transform = 'translateX(0%)'; // P54fa
     setTimeout(() => {
       bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
@@ -162,8 +162,8 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 // Change the color of the "View Source Code" button to blue and purple when clicked
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
-    button.style.backgroundColor = 'white';
-    button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
+    button.style.backgroundColor = 'neon-blue';
+    button.style.color = 'var(--black)'; // Change text color to neon blue
   });
 });
 
@@ -193,7 +193,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // P54fa
+    bar.style.transform = 'translateX(0%)'; // P54fa
     setTimeout(() => {
       bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
