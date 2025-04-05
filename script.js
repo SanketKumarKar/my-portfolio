@@ -1,4 +1,4 @@
- // Initialize EmailJS
+// Initialize EmailJS
 emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(0%)'; // P54fa
+    bar.style.transform = 'translateX(-100%)'; // Initial position off-screen to the left
     setTimeout(() => {
-      bar.style.transform = `translateX(${percent}%)`; // Pb076
+      bar.style.transform = `translateX(${percent}%)`; // Animate to the desired percentage
     }, 500);
   });
 
@@ -133,17 +133,6 @@ const addPlayfulAnimations = () => {
 
 document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
 
-// Add moving skills bar animation
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // P54fa
-    setTimeout(() => {
-      bar.style.transform = `translateX(${percent}%)`; // Pb076
-    }, 500);
-  });
-});
-
 // Add functionality to update the visit counter as soon as a user visits the site
 document.addEventListener('DOMContentLoaded', () => {
   const visitCounter = document.getElementById('visit-counter');
@@ -187,50 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.style.transition = 'none';
   button.style.transform = 'none';
-});
-
-// Update the skill bar animation to partially fill the bars
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // P54fa
-    setTimeout(() => {
-      bar.style.transform = `translateX(${percent}%)`; // Pb076
-    }, 500);
-  });
-});
-
-// Initialize particles.js
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.json loaded...');
-  // Add glow effect to particles
-  const particles = document.querySelectorAll('.particles-js-canvas-el');
-  particles.forEach(particle => {
-    particle.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
-  });
-});
-
-// Add event listener to "View Projects" button to ensure it scrolls to the projects section
-document.querySelector('.btn.nav-btn[href="#projects"]').addEventListener('click', (e) => {
-  e.preventDefault();
-  document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
-});
-
-// Add event listener to "Download CV" button to ensure it downloads the CV immediately
-document.querySelector('.btn.nav-btn[href="FinalResume.pdf"]').addEventListener('click', (e) => {
-  e.preventDefault();
-  window.location.href = 'FinalResume.pdf';
-});
-
-// Animate skill bars in the technical skills section
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // P54fa
-    setTimeout(() => {
-      bar.style.transform = `translateX(${percent}%)`; // Pb076
-    }, 500);
-  });
 });
 
 // Change skill bars color to pink purple gradient
