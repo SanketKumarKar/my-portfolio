@@ -297,7 +297,7 @@ body {
     transition: width 2s ease-in-out;
     position: relative;
     animation: skill-animation 2s ease-in-out forwards;
-    transform: translateX(-100%); /* Pce56 */
+    transform: translateX(100%); /* Pce56 */
 }
 
 .skill-progress span {
@@ -308,8 +308,8 @@ body {
 }
 
 @keyframes skill-animation {
-    0% { transform: translateX(-100%); } /* Pe61c */
-    100% { transform: translateX(0); } /* Pe61c */
+    0% { transform: translateX(0%); } /* Pe61c */
+    100% { transform: translateX(100%); } /* Pe61c */
 }
 
 /* Contact Section */
