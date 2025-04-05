@@ -163,7 +163,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
     button.style.backgroundColor = 'neon-blue';
-    button.style.color = 'var(--black)'; // Change text color to neon blue
+    button.style.color = 'var(--dark-bg)'; // Change text color to neon blue
   });
 });
 
@@ -193,7 +193,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(0%)'; // P54fa
+    bar.style.transform = 'translateX(-100%)'; // P54fa
     setTimeout(() => {
       bar.style.transform = `translateX(${percent}%)`; // Pb076
     }, 500);
