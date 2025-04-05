@@ -148,10 +148,10 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
   });
 });
 
-// Download CV Button
+// Remove any existing event listeners that might block the download
 document.querySelector('a[download]').addEventListener('click', (e) => {
-  // This will automatically trigger the download as specified in the HTML
-  console.log('Downloading CV...');
+    // Let the browser handle the download naturally
+    console.log("Downloading CV...");
 });
 
 // Social links open in popup
