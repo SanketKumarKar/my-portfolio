@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-btn').forEach(button => {
 // Contact Form Submission
 document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   emailjs.sendForm('service_el6zmci', 'template_wv6avkn', e.target)
     .then(() => {
       alert('Message sent successfully!');
@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
   document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
-    bar.style.transform = 'translateX(-100%)'; // Initial position off-screen to the left
+    bar.style.width = '0';
     setTimeout(() => {
-      bar.style.transform = `translateX(${percent}%)`; // Animate to the desired percentage
+      bar.style.width = `${percent}%`;
     }, 500);
   });
 
@@ -186,4 +186,26 @@ document.querySelectorAll('.skill-progress').forEach(bar => {
 // Resize skill bars to fit properly within their containers
 document.querySelectorAll('.skill-bar').forEach(bar => {
   bar.style.width = '100%';
+});
+
+// Initialize particles.js
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles.json loaded...');
+  // Add glow effect to particles
+  const particles = document.querySelectorAll('.particles-js-canvas-el');
+  particles.forEach(particle => {
+    particle.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)';
+  });
+});
+
+// Add event listener to "View Projects" button to ensure it scrolls to the projects section
+document.querySelector('.btn.nav-btn[href="#projects"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Add event listener to "Download CV" button to ensure it downloads the CV immediately
+document.querySelector('.btn.nav-btn[href="FinalResume.pdf"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.location.href = 'FinalResume.pdf';
 });
