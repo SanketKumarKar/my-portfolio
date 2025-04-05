@@ -1,4 +1,5 @@
- // Initialize EmailJS
+// script.js
+// Initialize EmailJS
 emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
@@ -15,19 +16,25 @@ document.querySelectorAll('.nav-btn').forEach(button => {
 // Contact Form Submission
 document.getElementById('contact-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   emailjs.sendForm('service_el6zmci', 'template_wv6avkn', e.target)
     .then(() => {
-      alert('Message sent successfully!');
-      e.target.reset();
-      // Add congratulation message animation
+      // Create and show congratulation message
       const congratsMessage = document.createElement('div');
       congratsMessage.classList.add('congrats-message');
-      congratsMessage.innerText = 'Congratulations! Your message has been sent.';
+      congratsMessage.innerHTML = `
+        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+        <p>Message sent successfully!</p>
+      `;
       document.body.appendChild(congratsMessage);
+      
+      // Remove message after animation
       setTimeout(() => {
         congratsMessage.remove();
-      }, 5000);
+      }, 3000);
+      
+      // Reset form
+      e.target.reset();
     }, (error) => {
       alert('Failed to send message. Please try again.');
       console.error('EmailJS Error:', error);
@@ -36,34 +43,14 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 
 // Initialize Animations
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate skill bars
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%'; // Reset to 0
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 500);
-  });
-
-  // Scroll Animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-  });
-
   // Initialize AOS
   AOS.init({
-    duration: 1200,
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true
   });
 
-  // Add typing animation for the name title
+  // Typing animation for the name title
   const nameTitle = document.querySelector('.typing-animation');
   const nameText = nameTitle.textContent;
   let index = 0;
@@ -84,68 +71,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   nameTitle.textContent = '';
   type();
-});
 
-// Project Filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+  // Scroll to top button
+  const scrollToTopBtn = document.createElement('button');
+  scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  scrollToTopBtn.classList.add('scroll-to-top');
+  document.body.appendChild(scrollToTopBtn);
 
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    const filter = button.dataset.filter;
-
-    projectCards.forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.category === filter) ? 
-        'block' : 'none';
-    });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
   });
-});
 
-// Scroll to Top Button
-const scrollToTopBtn = document.createElement('button');
-scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-scrollToTopBtn.classList.add('scroll-to-top');
-document.body.appendChild(scrollToTopBtn);
-
-window.addEventListener('scroll', () => {
-  scrollToTopBtn.style.display = window.scrollY > 500 ? 'block' : 'none';
-});
-
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// View Source Code Button Functionality
-document.querySelectorAll('.view-source-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    window.open('https://github.com/SanketKumarKar/my-portfolio', '_blank', 'width=800,height=600');
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
 
-// Add Playful Animations
-const addPlayfulAnimations = () => {
-  document.querySelectorAll('.btn').forEach(button => {
-    button.classList.add('playful-animation');
-  });
-};
-
-document.addEventListener('DOMContentLoaded', addPlayfulAnimations);
-
-// Add moving skills bar animation
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 500);
-  });
-});
-
-// Add functionality to update the visit counter as soon as a user visits the site
-document.addEventListener('DOMContentLoaded', () => {
+  // Visit counter
   const visitCounter = document.getElementById('visit-counter');
   let visits = localStorage.getItem('visits') || 226;
   visits++;
@@ -153,49 +98,66 @@ document.addEventListener('DOMContentLoaded', () => {
   visitCounter.textContent = `Portfolio Visits: ${visits}`;
 });
 
-// Make the "View Source Code" button smaller and slow down its animation
-document.querySelectorAll('.view-source-btn').forEach(button => {
-  button.style.padding = '0.3rem 0.8rem';
-  button.style.transition = 'none';
+// Skill bar animation with Intersection Observer
+const skillBars = document.querySelectorAll('.skill-progress');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const percent = entry.target.getAttribute('data-percent');
+      entry.target.style.width = `${percent}%`;
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+skillBars.forEach(bar => {
+  skillObserver.observe(bar);
 });
 
-// Change the color of the "View Source Code" button to blue and purple when clicked
+// Fade-in animation for sections
+const fadeElements = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => {
+  fadeObserver.observe(el);
+});
+
+// View Source Code Buttons
 document.querySelectorAll('.view-source-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    button.style.backgroundColor = 'white';
-    button.style.color = 'var(--neon-blue)'; // Change text color to neon blue
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const projectCard = button.closest('.project-card');
+    let githubLink = 'https://github.com/SanketKumarKar/';
+    
+    if (projectCard.dataset.category === 'nlp') {
+      githubLink += 'sentiment-analysis-project';
+    } else if (projectCard.dataset.category === 'cv') {
+      githubLink += 'face-recognition-project';
+    } else {
+      githubLink += 'my-portfolio';
+    }
+    
+    window.open(githubLink, '_blank');
   });
 });
 
-// Add event listeners to LinkedIn, GitHub, and email links to open them in a popup window
+// Download CV Button
+document.querySelector('a[download]').addEventListener('click', (e) => {
+  // This will automatically trigger the download as specified in the HTML
+  console.log('Downloading CV...');
+});
+
+// Social links open in popup
 document.querySelectorAll('.social-links a').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     window.open(link.href, '_blank', 'width=800,height=600');
-  });
-});
-
-// Remove the moving icon animations from the home page
-document.addEventListener('DOMContentLoaded', () => {
-  const movingIconsContainer = document.querySelector('.neon-icons-container');
-  if (movingIconsContainer) {
-    movingIconsContainer.remove();
-  }
-});
-
-// Remove the zoom-in and zoom-out animation from the "view source code" button
-document.querySelectorAll('.view-source-btn').forEach(button => {
-  button.style.transition = 'none';
-  button.style.transform = 'none';
-});
-
-// Update the skill bar animation to partially fill the bars
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-percent');
-    bar.style.width = '0%';
-    setTimeout(() => {
-      bar.style.width = percent + '%';
-    }, 500);
   });
 });
