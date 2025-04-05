@@ -161,3 +161,18 @@ document.querySelectorAll('.social-links a').forEach(link => {
     window.open(link.href, '_blank', 'width=800,height=600');
   });
 });
+
+
+// Fix View Projects button
+document.getElementById('view-projects-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.getElementById('projects').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+});
+
+// Fix Download CV button
+document.getElementById('download-cv-btn').addEventListener('click', (e) => {
+    // Let the default download behavior happen
+    console.log('Downloading CV...');
+});
