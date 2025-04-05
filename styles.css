@@ -34,8 +34,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
+    background: var(--dark-bg);
 }
 
 #particles-js {
@@ -43,7 +44,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.5); /* Added background to make particles visible */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 /* Navigation */
@@ -110,7 +111,7 @@ body {
 
 .btn {
     padding: 1rem 2rem;
-    border: 2px solid var (--neon-blue);
+    border: 2px solid var(--neon-blue);
     border-radius: 2rem;
     color: var(--neon-blue);
     text-decoration: none;
@@ -122,7 +123,7 @@ body {
 
 .btn:hover {
     background: var(--neon-blue);
-    color: var (--dark-bg);
+    color: var(--dark-bg);
     transform: translateY(-3px);
 }
 
@@ -286,30 +287,22 @@ body {
     border-radius: 1rem;
     margin: 1.5rem 0;
     position: relative;
-/*     overflow: hidden; /* Pa8d6 */ */
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #ff00ff, #800080); /* Added purple-pink gradient */
+    background: linear-gradient(90deg, #ff00ff, #800080);
     border-radius: 1rem;
     width: 0;
-    transition: width 2s ease-in-out;
+    transition: width 1s ease-in-out;
     position: relative;
-    animation: skill-animation 2s ease-in-out forwards;
-    transform: translateX(-100%); /* Pce56 */
 }
 
-.skill-progress span {
+.skill-name {
     position: absolute;
-    right: 0;
     top: -25px;
+    left: 0;
     color: var(--neon-blue);
-}
-
-@keyframes skill-animation {
-    0% { transform: translateX(-100%); } /* Pe61c */
-    100% { transform: translateX(0); } /* Pe61c */
 }
 
 /* Contact Section */
@@ -431,14 +424,14 @@ textarea {
 
 /* Footer */
 footer {
-    background: var (--dark-bg);
+    background: var(--dark-bg);
     padding: 1.5rem;
     text-align: center;
     border-top: 1px solid rgba(0, 243, 255, 0.1);
 }
 
 footer p {
-    color: var (--neon-blue);
+    color: var(--neon-blue);
     font-size: 0.9rem;
 }
 
@@ -613,16 +606,4 @@ footer p {
     .timeline-content {
         text-align: center;
     }
-}
-
-/* Moving Neon Icons */
-.neon-icons-container {
-    display: none;
-}
-
-.neon-icons-container i {
-    position: absolute;
-    font-size: 3rem;
-    color: rgba(0, 243, 255, 0.3);
-    transition: transform 3s ease-in-out;
 }
