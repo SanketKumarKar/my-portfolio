@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,31 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="particles-config.js"></script>
 </head>
 <body>
     <div id="static-background"></div>
     <div id="particles-js"></div>
+    
     <!-- Navigation -->
     <nav class="nav-container">
         <button class="nav-btn" data-section="hero">Home</button>
         <button class="nav-btn" data-section="about">About</button>
         <button class="nav-btn" data-section="skills">Skills</button>
+        <button class="nav-btn" data-section="projects">Projects</button>
         <button class="nav-btn" data-section="contact">Contact</button>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="section" data-aos="fade-up">
+    <section id="hero" class="section">
         <div class="hero-content">
-            <h1 class="neon-text typing-animation" style="font-family: 'Pacifico', cursive;">Sanket Kumar Kar</h1>
+            <h1 class="neon-text typing-animation">Sanket Kumar Kar</h1>
             <h2 class="neon-subtext">AI/ML Developer & Researcher</h2>
             <div class="hero-btns">
-                <a href="#projects" class="btn nav-btn">View Projects <i class="fas fa-arrow-down"></i></a>
-                <a href="FinalResume.pdf" download class="btn nav-btn">
+                <a href="#projects" class="btn nav-btn pulse-animation">View Projects <i class="fas fa-arrow-down"></i></a>
+                <a href="FinalResume.pdf" class="btn nav-btn pulse-animation" download="Sanket_Kumar_Kar_Resume">
                     <i class="fas fa-download"></i> Download CV
                 </a>
             </div>
@@ -40,21 +42,21 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section fade-in" data-aos="fade-up">
+    <section id="about" class="section fade-in">
         <div class="section-content">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="avatar-container">
-                    <img src="avatar.jpeg" alt="Avatar" class="avatar">
+                    <img src="avatar.jpeg" alt="Avatar" class="avatar hover-glow">
                     <div class="status-indicator">
-                        <div class="status-dot"></div>
+                        <div class="status-dot pulse"></div>
                         <span>Available for Collaborations</span>
                     </div>
                 </div>
                 <div class="about-text">
-                    <p class="highlight-text">Second-year Computer Science student passionate about AI/ML development. Focused on building intelligent solutions through machine learning and deep learning.</p>
+                    <p class="highlight-text">Second-year Computer Science student passionate about AI/ML development. Focused on building intelligent solutions through machine learning and deep learning technologies.</p>
                     <div class="timeline">
-                        <div class="timeline-item">
+                        <div class="timeline-item hover-float">
                             <i class="fas fa-university"></i>
                             <div class="timeline-content">
                                 <h3>2024-2028</h3>
@@ -62,7 +64,7 @@
                                 <p>Vellore Institute of Technology, Chennai</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                        <div class="timeline-item hover-float">
                             <i class="fas fa-school"></i>
                             <div class="timeline-content">
                                 <h3>2020-2024</h3>
@@ -77,12 +79,12 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section fade-in" data-aos="fade-up">
+    <section id="projects" class="section fade-in">
         <div class="section-content">
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-grid">
                 <!-- Project 1 -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card hover-glow" data-category="nlp">
                     <img src="project1.jpeg" alt="NLP Project" class="project-image">
                     <div class="project-content">
                         <h3><i class="fas fa-comment-dots"></i> Sentiment Analysis</h3>
@@ -92,11 +94,12 @@
                             <span class="tech-tag">TensorFlow</span>
                             <span class="tech-tag">NLTK</span>
                         </div>
+                        <button class="btn view-source-btn pulse-animation">View Source Code</button>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card" data-category="cv">
+                <div class="project-card hover-glow" data-category="cv">
                     <img src="project2.jpeg" alt="CV Project" class="project-image">
                     <div class="project-content">
                         <h3><i class="fas fa-eye"></i> Face Recognition</h3>
@@ -106,11 +109,12 @@
                             <span class="tech-tag">OpenCV</span>
                             <span class="tech-tag">Dlib</span>
                         </div>
+                        <button class="btn view-source-btn pulse-animation">View Source Code</button>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card" data-category="web">
+                <div class="project-card hover-glow" data-category="web">
                     <img src="project3.jpeg" alt="Web Project" class="project-image">
                     <div class="project-content">
                         <h3><i class="fas fa-laptop-code"></i> Portfolio Website</h3>
@@ -120,7 +124,7 @@
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                        <button class="btn view-source-btn">View Source Code</button>
+                        <button class="btn view-source-btn pulse-animation">View Source Code</button>
                     </div>
                 </div>
             </div>
@@ -128,44 +132,68 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section fade-in" data-aos="fade-up">
+    <section id="skills" class="section fade-in">
         <div class="section-content">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-container">
-                <div class="skill-category">
+                <div class="skill-category hover-float">
                     <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="85" style="text-align: left;">
-                            <span><i class="fab fa-python"></i> Python</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="85"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="80" style="text-align: left;">
-                            <span><i class="fab fa-java"></i> Java</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="75" style="text-align: left;">
-                            <span><i class="fab fa-js"></i> JavaScript</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="75"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category hover-float">
                     <h3><i class="fas fa-brain"></i> AI/ML</h3>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="75" style="text-align: right;">
-                            <span><i class="fas fa-robot"></i> TensorFlow</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-robot"></i> TensorFlow</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="75"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="80" style="text-align: right;">
-                            <span><i class="fas fa-brain"></i> PyTorch</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-brain"></i> PyTorch</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
                         </div>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-percent="87" style="text-align: right;">
-                            <span><i class="fas fa-brain"></i> Scikit-learn</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-brain"></i> Scikit-learn</span>
+                            <span class="skill-percent">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="87"></div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +202,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section fade-in" data-aos="fade-up">
+    <section id="contact" class="section fade-in">
         <div class="section-content">
             <h2 class="section-title">Get in Touch</h2>
             <div class="contact-wrapper">
@@ -191,24 +219,24 @@
                         <i class="fas fa-comment"></i>
                         <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">
+                    <button type="submit" class="submit-btn pulse-animation">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
-                <div class="contact-info">
+                <div class="contact-info hover-glow">
                     <div class="info-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <h4>Based in</h4>
                         <p>Chennai, India</p>
                     </div>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/sanketkumarkar" target="_blank" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">
+                        <a href="https://linkedin.com/in/sanketkumarkar" class="social-icon hover-glow">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/sanketkumarkar" target="_blank" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">
+                        <a href="https://github.com/sanketkumarkar" class="social-icon hover-glow">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:sanketkumarkar@gmail.com" onclick="window.open(this.href, '_blank', 'width=800,height=600'); return false;">
+                        <a href="mailto:sanketkumarkar@gmail.com" class="social-icon hover-glow">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -223,6 +251,7 @@
         <p>&copy; 2025 Sanket Kumar Kar. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
