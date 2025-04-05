@@ -152,7 +152,7 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
 document.querySelectorAll('.view-source-btn').forEach(button => {
   button.addEventListener('click', () => {
     button.style.backgroundColor = 'neon-blue';
-    button.style.color = 'var(--dark-bg)'; // Change text color to neon blue
+    button.style.color = 'var(--transparent)'; // Change text color to neon blue
   });
 });
 
