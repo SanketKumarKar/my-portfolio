@@ -37,13 +37,13 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
 // Initialize Animations
 document.addEventListener('DOMContentLoaded', () => {
   // Animate skill bars
-  document.querySelectorAll('.skill-progress').forEach(bar => {
+document.querySelectorAll('.skill-progress').forEach(bar => {
     const percent = bar.getAttribute('data-percent');
     bar.style.width = '0';
     setTimeout(() => {
-      bar.style.width = `${percent}%`;
+        bar.style.width = `${percent}%`;
     }, 500);
-  });
+});
 
   // Scroll Animations
   const observer = new IntersectionObserver((entries) => {
