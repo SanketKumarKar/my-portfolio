@@ -15,9 +15,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loader">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" class="loader-circle" />
+                </svg>
+            </div>
+            <h2 class="loading-text">Loading<span class="loading-dots">...</span></h2>
+        </div>
+    </div>
+
     <div id="static-background"></div>
     <div id="particles-js"></div>
-    
+
+    <!-- Logo -->
+    <div class="logo">Portfolio</div>
+
     <!-- Navigation -->
     <nav class="nav-container">
         <button class="nav-btn" data-section="hero">Home</button>

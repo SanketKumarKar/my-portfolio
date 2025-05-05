@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "#ffffff" // Changed particle color to white
+      "value": "#f713ff" 
     },
     "shape": {
       "type": "circle",
@@ -36,7 +36,7 @@
       }
     },
     "size": {
-      "value": 4, // Increased particle size to 4
+      "value": 4, 
       "random": true,
       "anim": {
         "enable": false,
@@ -46,9 +46,9 @@
       }
     },
     "line_linked": {
-      "enable": true, // Enabled line linking between particles
+      "enable": true,
       "distance": 150,
-      "color": "#ffffff",
+      "color": "#00ffff",
       "opacity": 0.4,
       "width": 1
     },

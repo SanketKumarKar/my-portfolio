@@ -4,6 +4,58 @@ emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
 
+// Loading Screen Logic
+document.addEventListener('DOMContentLoaded', () => {
+  // Simulate loading time or wait for actual resources to load
+  const loadingScreen = document.getElementById('loading-screen');
+  const loadingDots = document.querySelector('.loading-dots');
+  
+  // Update loading dots animation manually (more reliable than CSS content animation)
+  let dotCount = 0;
+  const dotInterval = setInterval(() => {
+    dotCount = (dotCount + 1) % 4;
+    loadingDots.textContent = '.'.repeat(dotCount || 1);
+  }, 500);
+  
+  // Track when the page actually loads
+  let pageLoaded = false;
+  let minLoadingTimeElapsed = false;
+  
+  // Hide loading screen after all resources are loaded
+  window.addEventListener('load', () => {
+    pageLoaded = true;
+    tryHideLoadingScreen();
+  });
+  
+  // Ensure minimum loading time of 3 seconds
+  setTimeout(() => {
+    minLoadingTimeElapsed = true;
+    tryHideLoadingScreen();
+  }, 3000); // Minimum 3 seconds loading time
+  
+  // Function to hide loading screen only when both conditions are met
+  function tryHideLoadingScreen() {
+    if (pageLoaded && minLoadingTimeElapsed) {
+      loadingScreen.classList.add('hidden');
+      clearInterval(dotInterval);
+      
+      // After transition completes, remove from DOM to improve performance
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 800); // Match transition duration
+    }
+  }
+  
+  // Fallback in case some resources take too long
+  setTimeout(() => {
+    loadingScreen.classList.add('hidden');
+    clearInterval(dotInterval);
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 800);
+  }, 8000); // Max loading time of 8 seconds (increased from 5 seconds)
+});
+
 // Smooth Scroll Navigation
 document.querySelectorAll('.nav-btn').forEach(button => {
   button.addEventListener('click', (e) => {
