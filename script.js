@@ -4,6 +4,14 @@ emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
 
+// Initialize particles.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Load particles configuration
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('particles.js loaded - callback');
+  });
+});
+
 // Loading Screen Logic
 document.addEventListener('DOMContentLoaded', () => {
   // Simulate loading time or wait for actual resources to load

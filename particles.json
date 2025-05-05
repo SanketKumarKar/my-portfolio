@@ -71,11 +71,11 @@
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": false,
+        "enable": true,
         "mode": "repulse"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true
@@ -113,10 +113,5 @@
     "position": "50% 50%",
     "repeat": "no-repeat",
     "size": "cover"
-  },
-  "glow": {
-    "enable": true,
-    "color": "#ffffff",
-    "intensity": 0.5
   }
 }
