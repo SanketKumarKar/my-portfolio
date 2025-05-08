@@ -714,7 +714,7 @@ footer p {
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: var(--neon-pink); }
+    50% { border-color: var(--neon-blue); }
 }
 
 /* Scroll to Top Button */
