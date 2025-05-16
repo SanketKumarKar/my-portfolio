@@ -10,6 +10,31 @@ document.addEventListener('DOMContentLoaded', function() {
   particlesJS.load('particles-js', 'particles.json', function() {
     console.log('particles.js loaded - callback');
   });
+  
+  // Hamburger Menu Toggle
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navContainer = document.querySelector('.nav-container');
+  
+  hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    navContainer.classList.toggle('active');
+  });
+  
+  // Close mobile menu when a nav link is clicked
+  document.querySelectorAll('.nav-btn').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('active');
+      navContainer.classList.remove('active');
+    });
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburgerMenu.contains(e.target) && !navContainer.contains(e.target)) {
+      hamburgerMenu.classList.remove('active');
+      navContainer.classList.remove('active');
+    }
+  });
 });
 
 // Loading Screen Logic
