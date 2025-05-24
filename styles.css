@@ -448,6 +448,7 @@ body {
     overflow: hidden;
     transition: var(--transition);
     border: 1px solid rgba(0, 243, 255, 0.2);
+    position: relative;
 }
 
 .project-image {
@@ -483,6 +484,25 @@ body {
     border-radius: 1rem;
     font-size: 0.9rem;
     font-weight: 600;
+    box-shadow: 0 0 6px var(--neon-pink);
+    margin-bottom: 0.2rem;
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.4s, background 0.4s, color 0.4s, transform 0.4s;
+    animation: tagFloat 3s ease-in-out infinite;
+}
+
+.project-card:hover .tech-tag {
+    box-shadow: 0 0 16px var(--neon-cyan), 0 0 8px var(--neon-pink);
+    background: var(--neon-cyan);
+    color: var(--dark-bg);
+    transform: scale(1.08) translateY(-2px) rotate(-2deg);
+}
+
+@keyframes tagFloat {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-3px) scale(1.06); }
+    100% { transform: translateY(0) scale(1); }
 }
 
 .view-source-btn {
@@ -503,6 +523,33 @@ body {
     background: var(--neon-pink);
     color: var(--dark-bg);
     box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.ai-tag {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    background: rgba(0,0,0,0.65);
+    color: var(--neon-pink);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: 0.18rem 0.7rem 0.18rem 0.5rem;
+    box-shadow: 0 0 7px var(--neon-pink);
+    z-index: 2;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    border: 1px solid var(--neon-pink);
+    transition: box-shadow 0.3s, border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.project-card:hover .ai-tag {
+    box-shadow: 0 0 12px var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    background: rgba(0,0,0,0.8);
 }
 
 /* Skills Section */
