@@ -524,6 +524,14 @@ body {
     padding: 2rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 0, 255, 0.2);
+    transition: var(--transition), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.3s;
+    box-shadow: 0 0 6px rgba(255,0,255,0.08);
+}
+
+.skill-category:hover {
+    box-shadow: 0 0 18px var(--neon-pink), 0 0 20px var(--neon-cyan), 0 4px 16px 0 rgba(255,0,255,0.12);
+    border-color: var(--neon-pink);
+    z-index: 2;
 }
 
 .skill-category h3 {
