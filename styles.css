@@ -1008,7 +1008,101 @@ footer p {
     }
 }
 
-/* Responsive Design */
+@media (max-width: 900px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .certificate-card {
+        min-height: 260px;
+        padding: 0.5rem 0;
+        border-radius: 1.1rem;
+    }
+    .certificate-image {
+        height: 120px;
+        border-radius: 0 0 1rem 1rem;
+    }
+    .certificate-info {
+        padding: 1rem 0.5rem 0.7rem 0.5rem;
+    }
+    .certificate-info h3 {
+        font-size: 1rem;
+    }
+    .certificate-info p {
+        font-size: 0.9rem;
+    }
+    .certificate-badge {
+        top: 0.7rem;
+        left: 0.7rem;
+        font-size: 1rem;
+        padding: 0.25rem;
+    }
+    .glass-reflection {
+        border-radius: 1.1rem 1.1rem 0 0;
+    }
+}
+@media (max-width: 600px) {
+    #certificates {
+        padding: 1.5rem 0.2rem;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .section-divider {
+        margin-bottom: 0.7rem;
+    }
+    .section-divider i {
+        font-size: 1.3rem;
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+    .certificate-info {
+        padding: 0.7rem 0.2rem 0.5rem 0.2rem;
+    }
+    .certificate-info h3 {
+        font-size: 0.92rem;
+    }
+    .certificate-info p {
+        font-size: 0.82rem;
+    }
+}
+/* Smoother transitions and mobile-friendly animations */
+.certificate-card, .certificate-image, .certificate-badge, .glass-reflection {
+    transition: all 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.4s, transform 0.4s;
+}
+.certificate-card:active {
+    transform: scale(0.98) rotateY(0deg) skewY(0deg);
+    box-shadow: 0 0 16px var(--neon-pink), 0 0 30px var(--neon-cyan);
+}
+.certificate-card:focus-within {
+    outline: 2px solid var(--neon-cyan);
+    outline-offset: 2px;
+}
+.certificate-image:active {
+    filter: brightness(1.05) drop-shadow(0 0 10px var(--neon-pink));
+    transform: scale(0.98);
+}
+/* Modal mobile improvements */
+@media (max-width: 600px) {
+    #certificate-modal .modal-content {
+        padding: 0.2rem;
+        border-radius: 0.7rem;
+    }
+    #certificate-modal .modal-certificate-image {
+        max-width: 98vw;
+        max-height: 40vh;
+        border-radius: 0.7rem;
+    }
+    #certificate-modal .modal-close-btn {
+        top: 0.3rem;
+        right: 0.3rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
