@@ -94,7 +94,9 @@ document.querySelectorAll('.nav-btn').forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
     const section = document.getElementById(button.dataset.section);
-    section.scrollIntoView({ behavior: 'smooth' });
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 
@@ -271,3 +273,42 @@ document.querySelector('a[download]').addEventListener('click', (e) => {
     link.click();
     document.body.removeChild(link);
 });
+
+// Modal for certificate zoom
+const certModal = document.createElement('div');
+certModal.id = 'certificate-modal';
+certModal.innerHTML = `
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <img src="" alt="Certificate Zoom" class="modal-certificate-image" />
+    <button class="modal-close-btn"><i class="fas fa-times"></i></button>
+  </div>
+`;
+document.body.appendChild(certModal);
+
+const modalImg = certModal.querySelector('.modal-certificate-image');
+const modalOverlay = certModal.querySelector('.modal-overlay');
+const modalCloseBtn = certModal.querySelector('.modal-close-btn');
+
+function openCertificateModal(imgSrc, altText) {
+  modalImg.src = imgSrc;
+  modalImg.alt = altText;
+  certModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertificateModal() {
+  certModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Open modal on certificate click
+
+document.querySelectorAll('.certificate-card .certificate-image').forEach(img => {
+  img.addEventListener('click', (e) => {
+    openCertificateModal(img.src, img.alt);
+  });
+});
+
+modalOverlay.addEventListener('click', closeCertificateModal);
+modalCloseBtn.addEventListener('click', closeCertificateModal);
