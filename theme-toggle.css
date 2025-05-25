@@ -1,0 +1,62 @@
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+body.light-mode .theme-toggle {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .theme-toggle i.fa-moon {
+    display: none;
+}
+
+body.light-mode .theme-toggle i.fa-sun {
+    display: block;
+}
+
+.theme-toggle i.fa-sun {
+    display: none;
+}
+
+/* Mobile Menu Theme Toggle */
+.nav-container.active .theme-toggle {
+    margin: 15px auto 0;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .hamburger-menu-container .theme-toggle {
+        margin-right: 15px;
+    }
+}

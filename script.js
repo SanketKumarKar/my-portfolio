@@ -4,12 +4,16 @@ emailjs.init({
   publicKey: '11TcJitY6ZSYn-GYF',
 });
 
-// Initialize particles.js
+// Initialize particles.js (if not already initialized by theme.js)
 document.addEventListener('DOMContentLoaded', function() {
-  // Load particles configuration
-  particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('particles.js loaded - callback');
-  });
+  // Check if particles.js is not already initialized by theme.js
+  if (!window.pJSDom || window.pJSDom.length === 0) {
+    // Load particles configuration based on current theme
+    const configFile = document.body.classList.contains('light-mode') ? 'particles-light.json' : 'particles.json';
+    particlesJS.load('particles-js', configFile, function() {
+      console.log('particles.js loaded - callback');
+    });
+  }
   
   // Hamburger Menu Toggle
   const hamburgerMenu = document.querySelector('.hamburger-menu');

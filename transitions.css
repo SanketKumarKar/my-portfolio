@@ -1,0 +1,38 @@
+/* Smooth theme transition styles */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 0.4s ease !important;
+  transition-delay: 0 !important;
+}
+
+/* Project card transitions */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Section transitions */
+section {
+  transition: background-color 0.4s ease, background-image 0.4s ease, opacity 0.3s ease;
+}
+
+/* Text transitions */
+h1, h2, h3, h4, h5, h6, p, span {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Button transitions */
+button, .btn, .nav-btn {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image transitions */
+img {
+  transition: filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Background transitions */
+#static-background, #particles-js {
+  transition: background-color 0.4s ease;
+}

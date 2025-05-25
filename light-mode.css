@@ -1,0 +1,387 @@
+/* Enhanced Google Theme Light Mode Styles */
+
+/* Smooth transition for theme changes */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 0.4s ease !important;
+  transition-delay: 0 !important;
+}
+
+/* Section-specific backgrounds in light mode */
+body.light-mode #hero {
+  background-color: #fbbc05; /* Google Yellow for home page */
+  background-image: linear-gradient(135deg, #fbbc05 0%, #fff8e0 100%);
+}
+
+body.light-mode #about {
+  background-color: #e8f0fe; /* Light blue background (Google Docs) */
+}
+
+body.light-mode #skills {
+  background-color: #e6f4ea; /* Light green background (Google Sheets) */
+}
+
+body.light-mode #projects {
+  background-color: #4285f4; /* Google Blue for projects */
+  background-image: linear-gradient(135deg, #4285f4 0%, #d0e1fd 100%);
+}
+
+body.light-mode #certificates {
+  background-color: #34a853; /* Google Green for certificates */
+  background-image: linear-gradient(135deg, #34a853 0%, #e6f4ea 100%);
+}
+
+body.light-mode #contact {
+  background-color: #fce8e6; /* Light red background (Google Gmail) */
+}
+
+/* Enhanced Project Card Styling for Light Mode */
+body.light-mode .project-card {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dadce0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+body.light-mode .project-content h3 {
+  color: #4285f4; /* Google Blue */
+}
+
+body.light-mode .project-content p {
+  color: #202124; /* Google Dark Gray */
+}
+
+/* Enhanced Light Mode Variables */
+:root {
+  /* Google Theme Colors */
+  --google-blue: #4285f4;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc05;
+  --google-green: #34a853;
+  
+  /* Light Mode Background Variations */
+  --light-bg-primary: #ffffff;
+  --light-bg-secondary: #f7f7fa;
+  --light-bg-blue: #e8f0fe;
+  --light-bg-yellow: #fef7e0;
+  --light-bg-green: #e6f4ea;
+  --light-bg-red: #fce8e6;
+  
+  /* Light Mode Text */
+  --light-text-primary: #202124;
+  --light-text-secondary: #5f6368;
+  
+  /* Light Mode UI Elements */
+  --light-border: #dadce0;
+  --light-card-bg: #ffffff;
+  --light-border-color: #dadce0;
+  --light-input-bg: #f1f3f4;
+}
+
+/* Enhanced Light Mode Class for Body */
+body.light-mode {
+  /* Override dark theme variables with Google-themed light mode */
+  --dark-bg: var(--light-bg-primary);
+  --section-bg: var(--light-bg-secondary);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  
+  /* Completely suppress neon effects */
+  --neon-text-shadow: none;
+  --neon-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  /* Override neon colors */
+  --neon-pink: var(--google-red);
+  --neon-cyan: var(--google-blue);
+  --neon-pink-dark: var(--google-red);
+  
+  /* Skill gradient */
+  --skill-gradient: linear-gradient(135deg, var(--google-blue), var(--google-green));
+}
+
+/* Section-specific backgrounds in light mode */
+body.light-mode #hero {
+  background-color: #fbbc05; /* Google Yellow for home page */
+  background-image: linear-gradient(135deg, #fbbc05 0%, #fff8e0 100%);
+}
+
+body.light-mode #about {
+  background-color: var(--light-bg-blue);
+}
+
+body.light-mode #skills {
+  background-color: var(--light-bg-yellow);
+}
+
+body.light-mode #projects {
+  background-color: #4285f4; /* Google Blue */
+  background-image: linear-gradient(135deg, #4285f4 0%, #d0e1fd 100%);
+}
+
+body.light-mode #certificates {
+  background-color: #34a853; /* Google Green */
+  background-image: linear-gradient(135deg, #34a853 0%, #e6f4ea 100%);
+}
+
+body.light-mode #contact {
+  background-color: var(--light-bg-red);
+}
+
+/* Enhanced Project Card Styling for Light Mode */
+body.light-mode .project-card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--light-border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .project-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  border-color: var(--google-blue);
+}
+
+body.light-mode .project-content h3 {
+  color: var(--google-blue);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  transition: border-bottom 0.3s ease;
+}
+
+body.light-mode .project-card:hover .project-content h3 {
+  border-bottom: 2px solid var(--google-blue);
+}
+
+body.light-mode .project-content p {
+  color: var(--light-text-secondary);
+}
+
+body.light-mode .project-image {
+  filter: brightness(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  border-bottom: 2px solid var(--light-border-color);
+}
+
+body.light-mode .project-card:hover .project-image {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+  border-bottom: 2px solid var(--google-blue);
+}
+
+body.light-mode .view-source-btn {
+  background: var(--google-blue);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .view-source-btn:hover {
+  background: #3367d6; /* Darker Google blue */
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.4);
+  transform: translateY(-2px);
+}
+
+body.light-mode .tech-tag {
+  background-color: #e8eaed; /* Google gray background */
+  color: #5f6368; /* Google gray text */
+  border: none;
+  box-shadow: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode .project-card:hover .tech-tag {
+  background: var(--google-green);
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+body.light-mode .ai-tag {
+  background: linear-gradient(90deg, var(--google-blue), var(--google-green));
+  color: white;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode .project-card:hover .ai-tag {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.05);
+
+/* Skills Section in Light Mode */
+body.light-mode .skill-category {
+  background-color: white;
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .skill-category:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--google-blue);
+}
+
+body.light-mode .skill-category h3 {
+  color: var(--google-blue);
+  border-bottom: 2px solid var(--google-yellow);
+}
+
+body.light-mode .skill-name {
+  color: var(--light-text-primary);
+}
+
+body.light-mode .skill-percent {
+  color: var(--google-green);
+}
+
+body.light-mode .skill-bar {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .skill-progress {
+  background: linear-gradient(to right, var(--google-blue), var(--google-green));
+  box-shadow: none;
+}
+
+/* Contact Form in Light Mode */
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background-color: white;
+  border: 1px solid #dadce0;
+  color: var(--light-text-primary);
+}
+
+body.light-mode .form-group i {
+  color: var(--google-blue);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  border-color: var(--google-blue);
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+body.light-mode .submit-btn {
+  background-color: var(--google-blue);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .submit-btn:hover {
+  background-color: #3367d6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact info in Light Mode */
+body.light-mode .contact-info {
+  background: white;
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .info-card i {
+  color: var(--google-blue);
+}
+
+body.light-mode .info-card h4 {
+  color: var(--light-text-primary);
+}
+
+body.light-mode .social-icon {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--light-text-primary);
+}
+
+body.light-mode .social-icon:hover {
+  background: var(--google-blue);
+  color: white;
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+}
+
+/* Certificate Cards in Light Mode */
+body.light-mode .certificate-card {
+  background: white;
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .certificate-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-color: var(--google-blue);
+}
+
+body.light-mode .certificate-info h3 {
+  color: var(--light-text-primary);
+  text-shadow: none;
+}
+
+body.light-mode .certificate-info p {
+  color: var(--google-blue);
+  text-shadow: none;
+}
+
+body.light-mode .certificate-image {
+  border-bottom: 2px solid var(--google-blue);
+  filter: none;
+}
+
+/* Modal in Light Mode */
+body.light-mode #certificate-modal.open {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode .modal-content {
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .modal-certificate-image {
+  border: 2px solid var(--google-blue);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .modal-close-btn {
+  background: var(--google-red);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .modal-close-btn:hover {
+  background: var(--google-blue);
+}
+
+/* Footer in Light Mode */
+body.light-mode footer {
+  background: #f8f9fa;
+  border-top: 1px solid var(--light-border);
+}
+
+body.light-mode footer p {
+  color: var(--light-text-primary);
+}
+
+body.light-mode #visit-counter {
+  color: var(--google-blue);
+}
+
+/* Animations in Light Mode */
+body.light-mode .neon-text {
+  color: var(--google-blue);
+}
+
+body.light-mode .neon-subtext {
+  color: var(--google-red);
+}
+
+body.light-mode .section-title {
+  color: var(--google-blue);
+  border-bottom: 3px solid var(--google-yellow);
+  padding-bottom: 5px;
+  display: inline-block;
+}
