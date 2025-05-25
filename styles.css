@@ -8,6 +8,37 @@
     --text-primary: #ffffff;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --skill-gradient: linear-gradient(135deg, var(--neon-pink), var(--neon-pink-dark));
+    
+    /* Google Theme Colors - Light Mode */
+    --google-blue: #4285f4;
+    --google-red: #ea4335;
+    --google-yellow: #fbbc05;
+    --google-green: #34a853;
+    
+    /* Light Mode Variables */
+    --light-bg-primary: #ffffff;
+    --light-bg-secondary: #f7f7fa;
+    --light-section-bg: #f1f3f4;
+    --light-text-primary: #202124;
+    --light-text-secondary: #5f6368;
+    --light-border: #dadce0;
+    
+    /* Neon Text Shadows */
+    --neon-text-shadow: 0 0 8px;
+    --neon-box-shadow: 0 0 15px;
+}
+
+/* Light Mode Class for Body */
+body.light-mode {
+    --dark-bg: var(--light-bg-primary);
+    --section-bg: var(--light-section-bg);
+    --text-primary: var(--light-text-primary);
+    --neon-pink: var(--google-red);
+    --neon-cyan: var(--google-blue);
+    --neon-pink-dark: var(--google-red);
+    --skill-gradient: linear-gradient(135deg, var(--google-blue), var(--google-green));
+    --neon-text-shadow: none;
+    --neon-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Loading Screen */
@@ -128,16 +159,23 @@
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--neon-cyan), var(--neon-pink));
-    border-radius: 10px;
-    border: 2px solid var(--dark-bg);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+body.light-mode ::-webkit-scrollbar {
+    background: var(--light-bg-secondary);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--neon-pink), var(--neon-cyan));
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+body.light-mode ::-webkit-scrollbar-track {
+    background: var(--light-bg-secondary);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--google-blue), var(--google-green));
+    border: 2px solid var(--light-bg-secondary);
+    box-shadow: none;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--google-red), var(--google-blue));
+    box-shadow: none;
 }
 
 html {
@@ -150,6 +188,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #static-background {
@@ -160,6 +199,7 @@ body {
     height: 100%;
     z-index: -2;
     background: var(--dark-bg);
+    transition: background-color 0.3s ease;
 }
 
 #particles-js {
@@ -168,6 +208,7 @@ body {
     height: 100%;
     z-index: -1;
     background: transparent;
+    transition: background-color 0.3s ease;
 }
 
 /* Logo */
@@ -186,22 +227,15 @@ body {
     color: transparent;
     text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
     animation: twinkle 3s ease-in-out infinite alternate;
+    transition: text-shadow 0.3s ease;
 }
 
-/* Add twinkling keyframes for logo animation */
-@keyframes twinkle {
-    0% {
-        text-shadow: 0 0 4px rgba(0, 255, 255, 0.3);
-        filter: brightness(1);
-    }
-    50% {
-        text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
-        filter: brightness(1.15);
-    }
-    100% {
-        text-shadow: 0 0 7px rgba(0, 255, 255, 0.4);
-        filter: brightness(1.05);
-    }
+body.light-mode .logo {
+    background: linear-gradient(90deg, #0056e1 0%,#ff1500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
 }
 
 /* Navigation */
@@ -212,6 +246,57 @@ body {
     z-index: 1000;
     display: flex;
     gap: 0.5rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 0.8rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.theme-toggle:hover {
+    background: var(--neon-cyan);
+    color: var(--dark-bg);
+    transform: translateY(-2px) rotate(20deg);
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+body.light-mode .theme-toggle {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: var(--google-blue);
+    color: var(--light-bg-primary);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .theme-toggle i.fa-moon {
+    display: none;
+}
+
+body.light-mode .theme-toggle i.fa-sun {
+    display: block;
+}
+
+.theme-toggle i.fa-sun {
+    display: none;
 }
 
 .nav-btn {
@@ -231,6 +316,17 @@ body {
     color: var(--dark-bg);
     transform: translateY(-2px);
     box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+body.light-mode .nav-btn {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+}
+
+body.light-mode .nav-btn:hover {
+    background: var(--google-blue);
+    color: var(--light-bg-primary);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Hamburger Menu */
@@ -273,6 +369,17 @@ body {
     box-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
 }
 
+body.light-mode .hamburger-bar {
+    background: var(--google-blue);
+    box-shadow: none;
+}
+
+body.light-mode .hamburger-menu.active .hamburger-bar:nth-child(1),
+body.light-mode .hamburger-menu.active .hamburger-bar:nth-child(3) {
+    background: var(--google-red);
+    box-shadow: none;
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
@@ -296,6 +403,7 @@ body {
     margin-bottom: 1rem;
     font-family: 'Pacifico', cursive;
     letter-spacing: 2px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .neon-subtext {
@@ -303,6 +411,17 @@ body {
     color: var(--neon-pink);
     text-shadow: 0 0 8px var(--neon-pink);
     margin-bottom: 2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.light-mode .neon-text {
+    color: var(--google-blue);
+    text-shadow: none;
+}
+
+body.light-mode .neon-subtext {
+    color: var(--google-red);
+    text-shadow: none;
 }
 
 .hero-btns {
@@ -333,10 +452,23 @@ body {
     box-shadow: 0 0 20px var(--neon-cyan);
 }
 
+body.light-mode .btn {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+body.light-mode .btn:hover {
+    background: var(--google-blue);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* About Section */
 #about {
     padding: 5rem 2rem;
     background: var(--section-bg);
+    transition: background-color 0.3s ease;
 }
 
 .section-title {
@@ -345,6 +477,12 @@ body {
     text-align: center;
     color: var(--neon-cyan);
     text-shadow: 0 0 8px var(--neon-cyan);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.light-mode .section-title {
+    color: var(--google-blue);
+    text-shadow: none;
 }
 
 .about-grid {
@@ -369,8 +507,17 @@ body {
     transition: var(--transition);
 }
 
+body.light-mode .avatar {
+    border-color: var(--google-blue);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .hover-glow:hover {
     box-shadow: 0 0 30px var(--neon-pink);
+}
+
+body.light-mode .hover-glow:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .status-indicator {
@@ -385,6 +532,14 @@ body {
     align-items: center;
     gap: 0.5rem;
     border: 1px solid var(--neon-cyan);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode .status-indicator {
+    background: white;
+    border-color: var(--google-blue);
+    color: var(--light-text-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .status-dot {
@@ -392,6 +547,10 @@ body {
     height: 10px;
     background: #00ff00;
     border-radius: 50%;
+}
+
+body.light-mode .status-dot {
+    background: var(--google-green);
 }
 
 .pulse {
@@ -419,9 +578,19 @@ body {
     border-left: 3px solid var(--neon-pink);
 }
 
+body.light-mode .timeline-item {
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 3px solid var(--google-red);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
 .hover-float:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(255, 0, 255, 0.2);
+}
+
+body.light-mode .hover-float:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .timeline-item i {
@@ -429,9 +598,18 @@ body {
     color: var(--neon-cyan);
 }
 
+body.light-mode .timeline-item i {
+    color: var(--google-blue);
+}
+
 /* Projects Section */
 #projects {
     padding: 5rem 2rem;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode #projects {
+    background: var(--light-bg-primary);
 }
 
 .project-grid {
@@ -451,11 +629,10 @@ body {
     position: relative;
 }
 
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: var(--transition);
+body.light-mode .project-card {
+    background: white;
+    border: 1px solid var(--light-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .project-content {
@@ -468,6 +645,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .project-content h3 {
+    color: var(--google-blue);
 }
 
 .tech-stack {
@@ -492,6 +674,12 @@ body {
     animation: tagFloat 3s ease-in-out infinite;
 }
 
+body.light-mode .tech-tag {
+    background: var(--google-yellow);
+    color: var(--light-text-primary);
+    box-shadow: none;
+}
+
 .project-card:hover .tech-tag {
     box-shadow: 0 0 16px var(--neon-cyan), 0 0 8px var(--neon-pink);
     background: var(--neon-cyan);
@@ -499,10 +687,10 @@ body {
     transform: scale(1.08) translateY(-2px) rotate(-2deg);
 }
 
-@keyframes tagFloat {
-    0% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-3px) scale(1.06); }
-    100% { transform: translateY(0) scale(1); }
+body.light-mode .project-card:hover .tech-tag {
+    background: var(--google-green);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .view-source-btn {
@@ -523,6 +711,17 @@ body {
     background: var(--neon-pink);
     color: var(--dark-bg);
     box-shadow: 0 0 15px var(--neon-pink);
+}
+
+body.light-mode .view-source-btn {
+    border-color: var(--google-red);
+    color: var(--google-red);
+}
+
+body.light-mode .view-source-btn:hover {
+    background: var(--google-red);
+    color: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ai-tag {
@@ -550,6 +749,41 @@ body {
     border-color: var(--neon-cyan);
     color: var(--neon-cyan);
     background: rgba(0,0,0,0.8);
+}
+
+body.light-mode .ai-tag {
+    background: rgba(255,255,255,0.9);
+    color: var(--google-red);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-color: var(--google-red);
+}
+
+body.light-mode .project-card:hover .ai-tag {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+    background: white;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+body.light-mode .project-image {
+    border-bottom: 1px solid var(--light-border);
+}
+
+body.light-mode .project-content p {
+    color: var(--light-text-secondary);
 }
 
 /* Skills Section */
@@ -628,6 +862,27 @@ body {
     width: 0;
     transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Light mode: Make skill boxes white and use neon yellow for accents */
+body.light-mode .skill-category {
+    background: #fff !important;
+    border: 2px solid #FFFF33 !important;
+    box-shadow: 0 4px 16px rgba(255, 255, 51, 0.08);
+}
+
+body.light-mode .skill-bar {
+    background: #f3f3f3;
+}
+
+body.light-mode .skill-progress {
+    background: linear-gradient(90deg, #FFFF33 0%, #4285f4 100%) !important;
+    box-shadow: 0 0 8px #FFFF33;
+}
+
+body.light-mode .skill-category h3,
+body.light-mode .skill-name {
+    color: #FFFF33 !important;
 }
 
 /* Contact Section */
@@ -936,6 +1191,16 @@ footer p {
     color: var(--neon-pink);
     font-size: 1rem;
     text-shadow: 0 0 6px var(--neon-pink);
+}
+
+body.light-mode .certificate-info h3 {
+    color: #fff !important;
+    text-shadow: none;
+}
+
+body.light-mode .certificate-info p {
+    color: #FFFF33 !important;
+    text-shadow: none;
 }
 
 .certificate-card {
@@ -1272,4 +1537,31 @@ footer p {
         top: 1.5rem;
         right: 1.5rem;
     }
+}
+
+/* Light mode hero section gradient: blue to yellow to green */
+body.light-mode #hero {
+    background: linear-gradient(120deg, #4285f4 0%, #fbbc05 60%, #34a853 100%);
+    /* fallback for browsers that don't support gradients */
+    background-color: #fbbc05;
+}
+
+/* Optional: make sure text remains readable on the gradient */
+body.light-mode .neon-text,
+body.light-mode .section-title {
+    color: #202124;
+    text-shadow: none;
+}
+
+/* Light mode: Make skill texts normal yellow, and section headings (AI/ML, Programming) red */
+body.light-mode .skill-category h3 {
+    color: #ea4335 !important; /* Google Red for section headings */
+}
+
+body.light-mode .skill-name {
+    color: #fbbc05 !important; /* Google Yellow for skill names */
+}
+
+body.light-mode .skill-percent {
+    color: #ea4335; /* Keep percentage in Google red for contrast */
 }
