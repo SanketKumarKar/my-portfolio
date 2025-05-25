@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (theme === 'light') {
       body.classList.add('light-mode');
+      // Update both desktop and mobile theme toggle icons
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      const mobileToggle = document.getElementById('mobile-theme-toggle');
+      if (mobileToggle) {
+        mobileToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      }
       localStorage.setItem('theme', 'light');
       
       // Apply smooth transition to project cards
@@ -21,7 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
       updateParticlesConfig('light');
     } else {
       body.classList.remove('light-mode');
+      // Update both desktop and mobile theme toggle icons
       themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      const mobileToggle = document.getElementById('mobile-theme-toggle');
+      if (mobileToggle) {
+        mobileToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      }
       localStorage.setItem('theme', 'dark');
       
       // Apply smooth transition to project cards
