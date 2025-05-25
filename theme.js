@@ -66,133 +66,226 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to update particles.js configuration
   function updateParticlesConfig(theme) {
+    console.log('updateParticlesConfig called with theme:', theme);
+    
+    // Check if particles.js is available
+    if (typeof particlesJS === 'undefined') {
+      console.error('particlesJS is not defined - library may not be loaded');
+      return;
+    }
+    
+    // Check if particles-js element exists
+    const particlesElement = document.getElementById('particles-js');
+    if (!particlesElement) {
+      console.error('particles-js element not found in DOM');
+      return;
+    }
+    
+    console.log('particles-js element found:', particlesElement);
+    console.log('Current pJSDom state:', window.pJSDom);
+    
     if (window.pJSDom && window.pJSDom.length > 0) {
+      console.log('Destroying existing particles instance');
       // Destroy current particles instance
       window.pJSDom[0].pJS.fn.vendors.destroypJS();
       window.pJSDom = [];
-      
-      if (theme === 'light') {
-        // For light mode, create a Google-themed particles config on the fly
-        const lightConfig = {
-          "particles": {
-            "number": {
-              "value": 80,
-              "density": {
-                "enable": true,
-                "value_area": 800
-              }
-            },
-            "color": {
-              "value": ["#4285f4", "#ea4335", "#fbbc05", "#34a853"]  // Google colors
-            },
-            "shape": {
-              "type": "circle",
-              "stroke": {
-                "width": 0,
-                "color": "#000000"
-              }
-            },
-            "opacity": {
-              "value": 0.5,
-              "random": false,
-              "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-              }
-            },
-            "size": {
-              "value": 3,
-              "random": true,
-              "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-              }
-            },
-            "line_linked": {
-              "enable": true,
-              "distance": 150,
-              "color": "#5f6368",  // Google dark gray for lines
-              "opacity": 0.4,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 3,
-              "direction": "none",
-              "random": false,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-              }
-            }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": {
-                "enable": true,
-                "mode": "grab"
-              },
-              "onclick": {
-                "enable": true,
-                "mode": "push"
-              },
-              "resize": true
-            },
-            "modes": {
-              "grab": {
-                "distance": 140,
-                "line_linked": {
-                  "opacity": 1
-                }
-              },
-              "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-              },
-              "repulse": {
-                "distance": 200,
-                "duration": 0.4
-              },
-              "push": {
-                "particles_nb": 4
-              },
-              "remove": {
-                "particles_nb": 2
-              }
-            }
-          },
-          "retina_detect": true,
-          "background": {
-            "color": "transparent",
-            "image": "",
-            "position": "50% 50%",
-            "repeat": "no-repeat",
-            "size": "cover"
-          }
-        };
-        
-        // Apply the light config directly
-        particlesJS('particles-js', lightConfig);
-        console.log('particles.js loaded with light theme');
-      } else {
-        // For dark mode, load the original config file
-        particlesJS.load('particles-js', 'particles.json', function() {
-          console.log('particles.js loaded with dark theme');
-        });
-      }
     }
+    
+    // Define configurations directly instead of loading from files
+    const lightConfig = {
+      "particles": {
+        "number": {
+          "value": 200,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": ["#ff0066", "#0066ff", "#ff6600", "#00cc66"]
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.8,
+          "random": false
+        },
+        "size": {
+          "value": 4,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#000000",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    };
+    
+    const darkConfig = {
+      "particles": {
+        "number": {
+          "value": 200,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#f713ff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.7,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 4,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#0011f8",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    };
+    
+    const config = theme === 'light' ? lightConfig : darkConfig;
+    console.log('Using inline config for theme:', theme);
+    
+    // Use direct particlesJS initialization
+    particlesJS('particles-js', config);
+    
+    console.log('particles.js initialized with theme:', theme);
+    
+    // Check if particles are actually rendered
+    setTimeout(() => {
+      const canvas = document.querySelector('#particles-js canvas');
+      if (canvas) {
+        console.log('Canvas found:', canvas);
+        console.log('Canvas dimensions:', canvas.width, 'x', canvas.height);
+        console.log('Canvas style:', canvas.style.cssText);
+        console.log('Canvas context:', canvas.getContext('2d'));
+      } else {
+        console.error('No canvas found in particles-js container');
+      }
+      
+      // Check particles-js container
+      const container = document.getElementById('particles-js');
+      console.log('Container innerHTML length:', container.innerHTML.length);
+      console.log('Container children count:', container.children.length);
+    }, 1000);
   }
   
   // Handle click event on theme toggle
@@ -218,6 +311,13 @@ document.addEventListener('DOMContentLoaded', function() {
       setTheme(e.matches ? 'dark' : 'light');
     });
   }
+  
+  // Initialize particles immediately for the current theme
+  setTimeout(() => {
+    const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+    console.log('Initial particles load for theme:', currentTheme);
+    updateParticlesConfig(currentTheme);
+  }, 500);
   
   // Add theme toggle to mobile menu
   const hamburgerMenu = document.querySelector('.hamburger-menu');
