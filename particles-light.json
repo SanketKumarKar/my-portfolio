@@ -48,8 +48,8 @@
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#4285f4",
-      "opacity": 0.4,
+      "color": "#000000",
+      "opacity": 0.8,
       "width": 1
     },
     "move": {
@@ -106,5 +106,12 @@
       }
     }
   },
-  "retina_detect": true
+  "retina_detect": true,
+  "background": {
+    "color": "#000000",
+    "image": "",
+    "position": "50% 50%",
+    "repeat": "no-repeat",
+   "size": "cover"
+
 }

@@ -206,9 +206,11 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     background: transparent;
     transition: background-color 0.3s ease;
+    min-height: 100vh;
+    pointer-events: none;
 }
 
 /* Logo */
@@ -1539,11 +1541,11 @@ body.light-mode .certificate-info p {
     }
 }
 
-/* Light mode hero section gradient: blue to yellow to green */
+/* Light mode hero section gradient: blue to yellow to green with transparency for particles */
 body.light-mode #hero {
-    background: linear-gradient(120deg, #4285f4 0%, #fbbc05 60%, #34a853 100%);
+    background: linear-gradient(120deg, rgba(66, 133, 244, 0.3) 0%, rgba(251, 188, 5, 0.4) 60%, rgba(52, 168, 83, 0.3) 100%);
     /* fallback for browsers that don't support gradients */
-    background-color: #fbbc05;
+    background-color: rgba(251, 188, 5, 0.2);
 }
 
 /* Optional: make sure text remains readable on the gradient */
