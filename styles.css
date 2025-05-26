@@ -869,7 +869,7 @@ body.light-mode .project-content p {
 /* Light mode: Make skill boxes white and use neon yellow for accents */
 body.light-mode .skill-category {
     background: #fff !important;
-    border: 2px solid #FFFF33 !important;
+    border: 2px solid #bc6700 !important;
     box-shadow: 0 4px 16px rgba(255, 255, 51, 0.08);
 }
 
@@ -878,13 +878,16 @@ body.light-mode .skill-bar {
 }
 
 body.light-mode .skill-progress {
-    background: linear-gradient(90deg, #FFFF33 0%, #4285f4 100%) !important;
-    box-shadow: 0 0 8px #FFFF33;
+    background: linear-gradient(90deg, #c902f6 0%, #f63636 100%) !important;
+    box-shadow: 0 0 8px #76765f;
 }
 
-body.light-mode .skill-category h3,
+body.light-mode .skill-category h3 {
+    color: #ea4335 !important; /* Google Red for section headings like Programming, AI/ML */
+}
+
 body.light-mode .skill-name {
-    color: #FFFF33 !important;
+    color: #bc6700 !important; /* Custom orange color for skill names like Python, Java, C++ */
 }
 
 /* Contact Section */
@@ -1566,4 +1569,105 @@ body.light-mode .skill-name {
 
 body.light-mode .skill-percent {
     color: #ea4335; /* Keep percentage in Google red for contrast */
+}
+
+/* Hidden certificates functionality */
+.hidden-certificate {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hidden-certificate.show {
+    display: flex;
+    animation: slideInFade 0.6s ease-out forwards;
+}
+
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* View More Button Container */
+.view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* View More Button Styles */
+.view-more-btn {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.view-more-btn:hover {
+    background: var(--neon-cyan);
+    color: var(--dark-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--neon-cyan);
+}
+
+.view-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-more-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+/* Light mode view more button */
+body.light-mode .view-more-btn {
+    border-color: var(--google-blue);
+    color: var(--google-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .view-more-btn:hover {
+    background: var(--google-blue);
+    color: white;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+/* Button loading state */
+.view-more-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.view-more-btn.loading .btn-text::after {
+    content: "...";
+    animation: loadingDots 1s infinite;
+}
+
+/* Mobile responsiveness for view more button */
+@media (max-width: 768px) {
+    .view-more-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .view-more-container {
+        margin-top: 2rem;
+    }
 }

@@ -304,3 +304,103 @@ document.querySelectorAll('.certificate-card .certificate-image').forEach(img =>
 
 modalOverlay.addEventListener('click', closeCertificateModal);
 modalCloseBtn.addEventListener('click', closeCertificateModal);
+
+// View More Certificates Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const viewMoreBtn = document.getElementById('view-more-certificates');
+  const hiddenCertificates = document.querySelectorAll('.hidden-certificate');
+  let isExpanded = false;
+
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', function() {
+      const btnText = viewMoreBtn.querySelector('.btn-text');
+      const btnIcon = viewMoreBtn.querySelector('i');
+      
+      // Add loading state
+      viewMoreBtn.classList.add('loading');
+      btnText.textContent = 'Loading';
+      
+      setTimeout(() => {
+        if (!isExpanded) {
+          // Show hidden certificates with staggered animation
+          hiddenCertificates.forEach((cert, index) => {
+            setTimeout(() => {
+              cert.classList.add('show');
+              // Re-initialize AOS for newly shown certificates
+              if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+              }
+            }, index * 150); // Staggered animation delay
+          });
+          
+          // Update button state
+          btnText.textContent = 'View Less';
+          btnIcon.className = 'fas fa-chevron-up';
+          viewMoreBtn.classList.add('expanded');
+          isExpanded = true;
+        } else {
+          // Hide certificates with staggered animation
+          const reversedCerts = Array.from(hiddenCertificates).reverse();
+          reversedCerts.forEach((cert, index) => {
+            setTimeout(() => {
+              cert.classList.remove('show');
+            }, index * 100);
+          });
+          
+          // Update button state
+          btnText.textContent = 'View More';
+          btnIcon.className = 'fas fa-chevron-down';
+          viewMoreBtn.classList.remove('expanded');
+          isExpanded = false;
+          
+          // On mobile, scroll to contact section when collapsing
+          if (window.innerWidth <= 768) {
+            setTimeout(() => {
+              document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+              });
+            }, 300);
+          }
+        }
+        
+        // Remove loading state
+        viewMoreBtn.classList.remove('loading');
+      }, 600); // Loading delay for smooth UX
+    });
+  }
+
+  // Update certificate modal functionality for dynamically shown certificates
+  function initializeCertificateModal() {
+    document.querySelectorAll('.certificate-card .certificate-image').forEach(img => {
+      // Remove existing listeners to prevent duplicates
+      img.removeEventListener('click', handleCertificateClick);
+      // Add new listener
+      img.addEventListener('click', handleCertificateClick);
+    });
+  }
+
+  function handleCertificateClick(e) {
+    openCertificateModal(e.target.src, e.target.alt);
+  }
+
+  // Initialize modal for all certificates including hidden ones
+  initializeCertificateModal();
+  
+  // Re-initialize when certificates are shown/hidden
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const target = mutation.target;
+        if (target.classList.contains('certificate-card') && target.classList.contains('show')) {
+          initializeCertificateModal();
+        }
+      }
+    });
+  });
+
+  // Observe changes to hidden certificates
+  hiddenCertificates.forEach(cert => {
+    observer.observe(cert, { attributes: true });
+  });
+});
