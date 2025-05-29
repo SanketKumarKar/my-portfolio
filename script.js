@@ -215,8 +215,8 @@ document.querySelectorAll('.view-source-btn').forEach(button => {
     const projectCard = button.closest('.project-card');
     let githubLink = 'https://github.com/SanketKumarKar/';
     
-    if (projectCard.dataset.category === 'nlp') {
-      githubLink += 'sentiment-analysis-project';
+    if (projectCard.dataset.category === 'transpiler') {
+      githubLink += 'Sanskrit-As-Coding-Language';
     } else if (projectCard.dataset.category === 'cv') {
       githubLink += 'face-recognition-project';
     } else {
