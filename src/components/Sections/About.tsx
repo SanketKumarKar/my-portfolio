@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-
 export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
@@ -25,7 +24,7 @@ export default function About() {
           >
             <h3 className="text-2xl font-semibold mb-4 text-brand-cyan">Education</h3>
             <p className="text-xl mb-2 font-medium">B.Tech AI & Machine Learning</p>
-            <p className="text-gray-400 mb-6">VIT Chennai • 8.75 CGPA</p>
+            <p className="text-gray-400 mb-6">VIT Chennai • 8.4 CGPA</p>
             
             <p className="text-gray-300 leading-relaxed mb-6">
               I am an AI engineering student passionate about building intelligent systems
