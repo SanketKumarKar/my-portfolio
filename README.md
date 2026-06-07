@@ -2,7 +2,9 @@
 
 Welcome to my personal portfolio repository! This is a modern, interactive, and fully responsive portfolio website built to showcase my skills, projects, and achievements as a Full-Stack Developer & AI Engineer.
 
-![Portfolio Preview](public/project/pawshelter.jpeg) <!-- Update with actual hero screenshot if you have one -->
+![Portfolio Preview]
+<img width="1898" height="885" alt="image" src="https://github.com/user-attachments/assets/461dd718-ec14-4016-84c2-2dd78982eb7c" />
+ <!-- Update with actual hero screenshot if you have one -->
 
 ## 🚀 Live Demo
 
