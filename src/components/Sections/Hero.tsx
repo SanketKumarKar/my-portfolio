@@ -93,7 +93,7 @@ export default function Hero({ isLoading = false }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16 md:pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         <div className="flex flex-col items-start text-left">
           <motion.div
@@ -139,11 +139,22 @@ export default function Hero({ isLoading = false }: HeroProps) {
             variants={textVariants}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full sm:w-auto"
           >
-            <MagneticButton className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-gray-100 transition-colors">
+            <MagneticButton 
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-gray-100 transition-colors"
+            >
               <span>View Projects</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </MagneticButton>
-            <MagneticButton className="glass text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-white/10 transition-colors">
+            <MagneticButton 
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/SanketKumarKar_Resume2026.pdf';
+                link.download = 'SanketKumarKar_Resume2026.pdf';
+                link.click();
+              }}
+              className="glass text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold flex items-center justify-center space-x-2 hover:bg-white/10 transition-colors"
+            >
               <Download size={18} />
               <span>Download Resume</span>
             </MagneticButton>
