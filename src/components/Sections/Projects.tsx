@@ -19,7 +19,7 @@ const projects = [
     tech: ['React', 'TailwindCSS', 'PostgreSQL', 'GenAI'],
     demoUrl: 'https://feastfull.vercel.app/',
     githubUrl: 'https://github.com/SanketKumarKar/Hostel-Mess-Planner',
-    image: 'public/project/feastfull.jpeg'
+    image: '/project/feastfull.jpeg'
   },
   {
     title: 'PawShelter',
@@ -34,7 +34,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express.js', 'PostgreSQL'],
     demoUrl: '#',
     githubUrl: 'https://github.com/SanketKumarKar/Animal-Shelter-FULLSTACK',
-    image: 'public/project/pawshelter.jpeg'
+    image: '/project/pawshelter.jpeg'
   }
 ];
 
