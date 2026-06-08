@@ -23,7 +23,7 @@ export default function About() {
             className="glass-card p-8 rounded-3xl"
           >
             <h3 className="text-2xl font-semibold mb-4 text-brand-cyan">Education</h3>
-            <p className="text-xl mb-2 font-medium">B.Tech AI & Machine Learning</p>
+            <p className="text-xl mb-2 font-medium">B.Tech CSE AI & Machine Learning</p>
             <p className="text-gray-400 mb-6">VIT Chennai • 8.4 CGPA</p>
             
             <p className="text-gray-300 leading-relaxed mb-6">
