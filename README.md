@@ -7,7 +7,7 @@ Welcome to my personal portfolio repository! This is a modern, interactive, and 
 
 ## 🚀 Live Demo
 
-[Visit my Portfolio](https://sanketkumarkar.vercel.app)
+[Visit my Portfolio](https://sanketkumarkar.netlify.app)
 
 ## ✨ Features
 
