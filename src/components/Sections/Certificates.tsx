@@ -5,25 +5,31 @@ const certificates = [
   {
     title: "Full Stack Web Development",
     issuer: "Angela Yu",
-    date: "2024",
+    date: "2025",
     image: "/cert/UC-a6b4d278-7f4b-4303-8bf3-937948290e1b.jpg"
   },
   {
     title: "GitHub Professional Certificate",
     issuer: "GitHub",
-    date: "2023",
+    date: "2025",
     image: "/cert/github1751705122428.jpg"
+  },
+  {
+    title: "Fundamentals of Agents",
+    issuer: "Hugging Face",
+    date: "2026",
+    image: "/cert/Hugging-Face-Agents-Course.png"
   },
   {
     title: "GitHub Copilot Fundamentals - Understand the AI pair programmer",
     issuer: "MICROSOFT",
-    date: "2023",
+    date: "2025",
     image: "/cert/micro.jpg"
   },
   {
     title: "Fundamentals of Accelerated Computing with CUDA Python",
     issuer: "NVIDIA",
-    date: "2023",
+    date: "2024",
     image: "/cert/nvdia.jpg"
   }
 ];
